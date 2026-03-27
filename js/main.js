@@ -350,16 +350,8 @@ async function submitForm(event) {
 }
 
 async function createLead(data) {
-  // =========================================================
-  // Google Sheets Integration via Apps Script
-  // INSTRUÇÃO: Substitua o URL abaixo pelo URL do seu Apps Script publicado
-  // =========================================================
-  const GOOGLE_SCRIPT_URL = 'COLE_AQUI_O_URL_DO_SEU_APPS_SCRIPT';
-
-  if (GOOGLE_SCRIPT_URL === 'COLE_AQUI_O_URL_DO_SEU_APPS_SCRIPT') {
-    console.warn('⚠️ Google Sheets URL não configurado. Configure em main.js → createLead()');
-    return;
-  }
+  // Endpoint do Formspree configurado
+  const FORMSPREE_URL = 'https://formspree.io/f/xykbzqjg';
 
   const payload = {
     nome: data.nome || '',
@@ -373,15 +365,22 @@ async function createLead(data) {
   };
 
   try {
-    await fetch(GOOGLE_SCRIPT_URL, {
+    const response = await fetch(FORMSPREE_URL, {
       method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
       body: JSON.stringify(payload)
     });
-    console.log('✅ Lead enviado para Google Sheets');
+    
+    if (response.ok) {
+      console.log('✅ Lead enviado com sucesso para o Formspree');
+    } else {
+      console.warn('⚠️ Erro ao enviar lead:', response.statusText);
+    }
   } catch (error) {
-    console.warn('Lead API não disponível:', error.message);
+    console.warn('Erro de rede ao submeter lead:', error.message);
   }
 }
 
