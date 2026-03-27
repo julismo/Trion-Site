@@ -350,30 +350,38 @@ async function submitForm(event) {
 }
 
 async function createLead(data) {
+  // =========================================================
+  // Google Sheets Integration via Apps Script
+  // INSTRUÇÃO: Substitua o URL abaixo pelo URL do seu Apps Script publicado
+  // =========================================================
+  const GOOGLE_SCRIPT_URL = 'COLE_AQUI_O_URL_DO_SEU_APPS_SCRIPT';
+
+  if (GOOGLE_SCRIPT_URL === 'COLE_AQUI_O_URL_DO_SEU_APPS_SCRIPT') {
+    console.warn('⚠️ Google Sheets URL não configurado. Configure em main.js → createLead()');
+    return;
+  }
+
+  const payload = {
+    nome: data.nome || '',
+    email: data.email || '',
+    empresa: data.empresa || '',
+    cargo: data.cargo || '',
+    interesse: data.interesse || '',
+    descricao: data.descricao || '',
+    origem: 'website_formulario',
+    data_submissao: new Date().toISOString()
+  };
+
   try {
-    const response = await fetch('tables/leads', {
+    await fetch(GOOGLE_SCRIPT_URL, {
       method: 'POST',
+      mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        nome: data.nome || '',
-        email: data.email || '',
-        empresa: data.empresa || '',
-        cargo: data.cargo || '',
-        interesse: data.interesse || '',
-        descricao: data.descricao || '',
-        origem: 'website_formulario',
-        data_submissao: new Date().toISOString()
-      })
+      body: JSON.stringify(payload)
     });
-
-    if (!response.ok) {
-      throw new Error('API error: ' + response.status);
-    }
-
-    return await response.json();
+    console.log('✅ Lead enviado para Google Sheets');
   } catch (error) {
-    // Fallback: still show success even if API fails in development
-    console.warn('Lead API not available, continuing:', error.message);
+    console.warn('Lead API não disponível:', error.message);
   }
 }
 
