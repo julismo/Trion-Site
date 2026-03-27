@@ -378,9 +378,11 @@ async function createLead(data) {
       console.log('✅ Lead enviado com sucesso para o Formspree');
     } else {
       console.warn('⚠️ Erro ao enviar lead:', response.statusText);
+      throw new Error('Falha na resposta do servidor'); // Lança erro para o submitForm apanhar
     }
   } catch (error) {
     console.warn('Erro de rede ao submeter lead:', error.message);
+    throw error; // Repassa o erro para que a UI mostre a mensagem vermelha
   }
 }
 
