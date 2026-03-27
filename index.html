@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trion Scale — IA Sob Medida para Empresas</title>
+  <meta name="description" content="Transformamos os processos da sua empresa com IA sob medida. Agentes de IA personalizados, automações inteligentes e software à medida — sem licenças proprietárias." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">Trion<span class="logo-accent">Scale</span></span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#solucoes" class="nav-link">Soluções</a>
+        <a href="#como-trabalhamos" class="nav-link">Como Trabalhamos</a>
+        <a href="#casos" class="nav-link">Casos de Sucesso</a>
+        <a href="#recursos" class="nav-link">Recursos</a>
+        <a href="#sobre" class="nav-link">Sobre</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-primary" onclick="openModal()">Agendar Diagnóstico</button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="grid-pattern"></div>
+      <div class="hero-glow"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        <span>IA Aplicada ao Negócio — Sem Licenças Proprietárias</span>
+      </div>
+      <h1 class="hero-title reveal">
+        Transformamos os processos<br />da sua empresa com<br />
+        <span class="gradient-text">IA sob medida</span>
+      </h1>
+      <p class="hero-subtitle reveal">
+        Agentes de IA personalizados, automações inteligentes e software à medida —<br class="hide-mobile" />
+        integrados ao seu stack, sem dependência de licenças.
+      </p>
+      <div class="hero-ctas reveal">
+        <button class="btn btn-primary btn-large" onclick="openModal()">
+          Agendar Diagnóstico Gratuito
+          <i class="fas fa-arrow-right"></i>
+        </button>
+        <a href="#casos" class="btn btn-outline btn-large">
+          Ver Casos de Sucesso
+        </a>
+      </div>
+
+      <!-- Metrics Ticker -->
+      <div class="metrics-ticker reveal">
+        <div class="ticker-track" id="tickerTrack">
+          <div class="ticker-item">
+            <span class="ticker-number">45%</span>
+            <span class="ticker-label">redução de custos operacionais</span>
+            <span class="ticker-sector">INDÚSTRIA</span>
+          </div>
+          <div class="ticker-divider">·</div>
+          <div class="ticker-item">
+            <span class="ticker-number">3×</span>
+            <span class="ticker-label">mais velocidade de processamento</span>
+            <span class="ticker-sector">LOGÍSTICA</span>
+          </div>
+          <div class="ticker-divider">·</div>
+          <div class="ticker-item">
+            <span class="ticker-number">70%</span>
+            <span class="ticker-label">menos erros manuais</span>
+            <span class="ticker-sector">SERVIÇOS FINANCEIROS</span>
+          </div>
+          <div class="ticker-divider">·</div>
+          <div class="ticker-item">
+            <span class="ticker-number">2×</span>
+            <span class="ticker-label">aumento de receita</span>
+            <span class="ticker-sector">RETALHO</span>
+          </div>
+          <div class="ticker-divider">·</div>
+          <!-- Duplicate for seamless loop -->
+          <div class="ticker-item">
+            <span class="ticker-number">45%</span>
+            <span class="ticker-label">redução de custos operacionais</span>
+            <span class="ticker-sector">INDÚSTRIA</span>
+          </div>
+          <div class="ticker-divider">·</div>
+          <div class="ticker-item">
+            <span class="ticker-number">3×</span>
+            <span class="ticker-label">mais velocidade de processamento</span>
+            <span class="ticker-sector">LOGÍSTICA</span>
+          </div>
+          <div class="ticker-divider">·</div>
+          <div class="ticker-item">
+            <span class="ticker-number">70%</span>
+            <span class="ticker-label">menos erros manuais</span>
+            <span class="ticker-sector">SERVIÇOS FINANCEIROS</span>
+          </div>
+          <div class="ticker-divider">·</div>
+          <div class="ticker-item">
+            <span class="ticker-number">2×</span>
+            <span class="ticker-label">aumento de receita</span>
+            <span class="ticker-sector">RETALHO</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PARA QUEM ===================== -->
+  <section class="section section-alt" id="para-quem">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Para Quem</span>
+        <h2 class="section-title">Criada para os decisores<br />que querem resultados reais</h2>
+        <p class="section-subtitle">A Trion Scale trabalha com líderes que já perceberam que IA genérica não resolve — e que precisam de um parceiro que entenda tanto de tecnologia como de negócio.</p>
+      </div>
+      <div class="personas-grid">
+        <div class="persona-card reveal">
+          <div class="persona-icon">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <div class="persona-tag">COO / Diretor de Operações</div>
+          <h3 class="persona-title">Operação emperrada por processos manuais?</h3>
+          <p class="persona-desc">Processos lentos, dependência de planilhas, retrabalho constante? Automatizamos o que trava a sua operação — sem interromper o que já funciona.</p>
+          <a href="#solucoes" class="persona-link">Ver soluções <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="persona-card reveal">
+          <div class="persona-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <div class="persona-tag">CIO / Head de IT</div>
+          <h3 class="persona-title">Pressão para trazer IA, sistemas fragmentados?</h3>
+          <p class="persona-desc">Integramos IA ao seu stack existente — ERP, CRM, bases de dados — com segurança, governança e sem black-boxes ou lock-in em licenças.</p>
+          <a href="#solucoes" class="persona-link">Ver soluções <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="persona-card reveal">
+          <div class="persona-icon">
+            <i class="fas fa-lightbulb"></i>
+          </div>
+          <div class="persona-tag">Diretor de Inovação</div>
+          <h3 class="persona-title">POCs que nunca chegam a produção?</h3>
+          <p class="persona-desc">Levamos projetos de IA do diagnóstico ao resultado mensurável. Discovery, protótipo, produção — com KPIs claros em cada fase.</p>
+          <a href="#como-trabalhamos" class="persona-link">Ver metodologia <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="persona-card reveal">
+          <div class="persona-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div class="persona-tag">CEO / Fundador</div>
+          <h3 class="persona-title">Concorrentes já usam IA — por onde começar?</h3>
+          <p class="persona-desc">Criamos um roadmap pragmático, começando onde o impacto é maior. Sem jargão, sem hype — foco em payback rápido e escalabilidade real.</p>
+          <a href="#casos" class="persona-link">Ver casos de sucesso <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOLUÇÕES ===================== -->
+  <section class="section" id="solucoes">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Soluções</span>
+        <h2 class="section-title">Tudo o que precisa.<br />Nada do que não precisa.</h2>
+        <p class="section-subtitle">Três tipos de solução, todos desenvolvidos à medida para o seu negócio, dados e processos específicos.</p>
+      </div>
+
+      <div class="solutions-list">
+        <!-- Solução 01 -->
+        <div class="solution-item reveal">
+          <div class="solution-number">01</div>
+          <div class="solution-content">
+            <div class="solution-badge">Agentes de IA</div>
+            <h3 class="solution-title">Agentes de IA<br />Personalizados</h3>
+            <p class="solution-desc">Agentes inteligentes que automatizam decisões complexas, integrados aos seus dados e processos internos. IA que entende o seu negócio — não genérica.</p>
+            <div class="solution-usecases">
+              <span class="usecase-tag"><i class="fas fa-comment-alt"></i> Atendimento ao cliente</span>
+              <span class="usecase-tag"><i class="fas fa-file-alt"></i> Análise de documentos</span>
+              <span class="usecase-tag"><i class="fas fa-headset"></i> Suporte interno</span>
+              <span class="usecase-tag"><i class="fas fa-tags"></i> Classificação e triagem</span>
+            </div>
+            <div class="solution-highlight">
+              <i class="fas fa-check-circle"></i>
+              <span>IA que aprende com os seus dados, não com dados genéricos</span>
+            </div>
+          </div>
+          <div class="solution-visual">
+            <div class="solution-card-visual">
+              <div class="visual-header">
+                <div class="visual-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <span class="visual-title">Agente de IA — Atendimento</span>
+              </div>
+              <div class="visual-body">
+                <div class="agent-flow">
+                  <div class="agent-step active">
+                    <div class="step-icon"><i class="fas fa-inbox"></i></div>
+                    <div class="step-info">
+                      <span class="step-name">Entrada do pedido</span>
+                      <span class="step-status success">✓ Processado</span>
+                    </div>
+                  </div>
+                  <div class="agent-connector"></div>
+                  <div class="agent-step active">
+                    <div class="step-icon"><i class="fas fa-brain"></i></div>
+                    <div class="step-info">
+                      <span class="step-name">Classificação automática</span>
+                      <span class="step-status success">✓ Alta prioridade</span>
+                    </div>
+                  </div>
+                  <div class="agent-connector"></div>
+                  <div class="agent-step">
+                    <div class="step-icon"><i class="fas fa-bolt"></i></div>
+                    <div class="step-info">
+                      <span class="step-name">Ação automática</span>
+                      <span class="step-status processing">⟳ Executando...</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="agent-metric">
+                  <span class="metric-label">Tempo médio de resposta</span>
+                  <span class="metric-value">1.2s</span>
+                  <span class="metric-diff positive">-94% vs. manual</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solução 02 -->
+        <div class="solution-item solution-reverse reveal">
+          <div class="solution-number">02</div>
+          <div class="solution-content">
+            <div class="solution-badge">Automações</div>
+            <h3 class="solution-title">Automações Inteligentes<br />de Processos</h3>
+            <p class="solution-desc">Elimine tarefas manuais repetitivas com fluxos automatizados que conectam sistemas, dados e pessoas. Menos retrabalho, mais velocidade operacional.</p>
+            <div class="solution-usecases">
+              <span class="usecase-tag"><i class="fas fa-file-invoice-dollar"></i> Processos financeiros</span>
+              <span class="usecase-tag"><i class="fas fa-truck"></i> Operações logísticas</span>
+              <span class="usecase-tag"><i class="fas fa-user-check"></i> Onboarding</span>
+              <span class="usecase-tag"><i class="fas fa-chart-bar"></i> Relatórios automáticos</span>
+            </div>
+            <div class="solution-highlight">
+              <i class="fas fa-check-circle"></i>
+              <span>Conectamos qualquer sistema via APIs, sem reescrever o seu stack</span>
+            </div>
+          </div>
+          <div class="solution-visual">
+            <div class="solution-card-visual">
+              <div class="visual-header">
+                <div class="visual-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <span class="visual-title">Automação — Fluxo Financeiro</span>
+              </div>
+              <div class="visual-body">
+                <div class="automation-flow">
+                  <div class="auto-node">
+                    <span class="auto-icon"><i class="fas fa-database"></i></span>
+                    <span>ERP</span>
+                  </div>
+                  <div class="auto-arrow">→</div>
+                  <div class="auto-node highlight">
+                    <span class="auto-icon"><i class="fas fa-brain"></i></span>
+                    <span>IA</span>
+                  </div>
+                  <div class="auto-arrow">→</div>
+                  <div class="auto-node">
+                    <span class="auto-icon"><i class="fas fa-check"></i></span>
+                    <span>CRM</span>
+                  </div>
+                </div>
+                <div class="auto-stats">
+                  <div class="auto-stat">
+                    <span class="auto-stat-num">70%</span>
+                    <span class="auto-stat-label">menos tempo</span>
+                  </div>
+                  <div class="auto-stat">
+                    <span class="auto-stat-num">0</span>
+                    <span class="auto-stat-label">erros manuais</span>
+                  </div>
+                  <div class="auto-stat">
+                    <span class="auto-stat-num">24/7</span>
+                    <span class="auto-stat-label">operação</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solução 03 -->
+        <div class="solution-item reveal">
+          <div class="solution-number">03</div>
+          <div class="solution-content">
+            <div class="solution-badge">Software Sob Medida</div>
+            <h3 class="solution-title">Software Sob Medida<br />com IA</h3>
+            <p class="solution-desc">Desenvolvimento de aplicações à medida com inteligência artificial incorporada — desenhadas para o seu contexto, dados e fluxos de trabalho específicos.</p>
+            <div class="solution-usecases">
+              <span class="usecase-tag"><i class="fas fa-tachometer-alt"></i> Dashboards preditivos</span>
+              <span class="usecase-tag"><i class="fas fa-layer-group"></i> Plataformas de gestão</span>
+              <span class="usecase-tag"><i class="fas fa-search"></i> Ferramentas de análise</span>
+              <span class="usecase-tag"><i class="fas fa-robot"></i> Copilots internos</span>
+            </div>
+            <div class="solution-highlight">
+              <i class="fas fa-check-circle"></i>
+              <span>Tecnologia que se adapta à sua empresa — não o contrário</span>
+            </div>
+          </div>
+          <div class="solution-visual">
+            <div class="solution-card-visual">
+              <div class="visual-header">
+                <div class="visual-dots">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+                <span class="visual-title">Dashboard Preditivo</span>
+              </div>
+              <div class="visual-body">
+                <div class="dashboard-preview">
+                  <div class="dash-metric">
+                    <span class="dash-label">Previsão de demanda</span>
+                    <span class="dash-value">+12%</span>
+                    <div class="dash-bar">
+                      <div class="dash-bar-fill" style="width: 72%"></div>
+                    </div>
+                  </div>
+                  <div class="dash-metric">
+                    <span class="dash-label">Eficiência operacional</span>
+                    <span class="dash-value">94%</span>
+                    <div class="dash-bar">
+                      <div class="dash-bar-fill" style="width: 94%"></div>
+                    </div>
+                  </div>
+                  <div class="dash-metric">
+                    <span class="dash-label">Redução de custos</span>
+                    <span class="dash-value">-35%</span>
+                    <div class="dash-bar">
+                      <div class="dash-bar-fill" style="width: 55%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-disclaimer reveal">
+        <div class="disclaimer-inner">
+          <i class="fas fa-shield-alt"></i>
+          <span>Sem dependência de licenças proprietárias. <strong>Flexibilidade total. Controlo dos seus dados.</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMO TRABALHAMOS ===================== -->
+  <section class="section section-alt" id="como-trabalhamos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Metodologia</span>
+        <h2 class="section-title">Cinco passos.<br />Resultados mensuráveis.</h2>
+        <p class="section-subtitle">Da primeira conversa à produção — uma metodologia clara, transparente e orientada a impacto real.</p>
+      </div>
+
+      <div class="process-wrapper">
+        <div class="process-steps">
+          <div class="process-step reveal" data-step="1">
+            <div class="process-step-num">01</div>
+            <div class="process-step-body">
+              <div class="process-icon"><i class="fas fa-search"></i></div>
+              <h3 class="process-step-title">Diagnóstico</h3>
+              <p class="process-step-desc">Analisamos os seus processos, dados e oportunidades de IA. Identificamos onde o impacto é maior e mais rápido.</p>
+              <div class="process-step-output">
+                <span class="output-label">Entregável:</span>
+                <span class="output-value">Mapa de oportunidades com estimativas de ROI</span>
+              </div>
+            </div>
+          </div>
+          <div class="process-connector"></div>
+          <div class="process-step reveal" data-step="2">
+            <div class="process-step-num">02</div>
+            <div class="process-step-body">
+              <div class="process-icon"><i class="fas fa-drafting-compass"></i></div>
+              <h3 class="process-step-title">Desenho de Solução</h3>
+              <p class="process-step-desc">Definimos a arquitetura, integrações necessárias e KPIs de sucesso. Sem surpresas no caminho.</p>
+              <div class="process-step-output">
+                <span class="output-label">Entregável:</span>
+                <span class="output-value">Blueprint técnico e plano de projeto</span>
+              </div>
+            </div>
+          </div>
+          <div class="process-connector"></div>
+          <div class="process-step reveal" data-step="3">
+            <div class="process-step-num">03</div>
+            <div class="process-step-body">
+              <div class="process-icon"><i class="fas fa-flask"></i></div>
+              <h3 class="process-step-title">Prototipagem e Validação</h3>
+              <p class="process-step-desc">Construímos um protótipo funcional para validar hipóteses com a sua equipa antes do investimento total.</p>
+              <div class="process-step-output">
+                <span class="output-label">Entregável:</span>
+                <span class="output-value">Protótipo validado com métricas iniciais</span>
+              </div>
+            </div>
+          </div>
+          <div class="process-connector"></div>
+          <div class="process-step reveal" data-step="4">
+            <div class="process-step-num">04</div>
+            <div class="process-step-body">
+              <div class="process-icon"><i class="fas fa-rocket"></i></div>
+              <h3 class="process-step-title">Implementação em Produção</h3>
+              <p class="process-step-desc">Integramos ao stack existente com segurança, governança e suporte total à mudança para a sua equipa.</p>
+              <div class="process-step-output">
+                <span class="output-label">Entregável:</span>
+                <span class="output-value">Solução em produção com monitorização activa</span>
+              </div>
+            </div>
+          </div>
+          <div class="process-connector"></div>
+          <div class="process-step reveal" data-step="5">
+            <div class="process-step-num">05</div>
+            <div class="process-step-body">
+              <div class="process-icon"><i class="fas fa-sync-alt"></i></div>
+              <h3 class="process-step-title">Melhoria Contínua</h3>
+              <p class="process-step-desc">Monitorizamos, otimizamos e evoluímos a solução com base em dados reais. IA que melhora com o tempo.</p>
+              <div class="process-step-output">
+                <span class="output-label">Entregável:</span>
+                <span class="output-value">Relatórios mensais de performance e evolução</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="process-code-block reveal">
+          <div class="code-header">
+            <div class="visual-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="code-filename">trion.workflow.ts</span>
+          </div>
+          <pre class="code-content"><code><span class="code-comment">// Metodologia Trion Scale</span>
+<span class="code-keyword">const</span> <span class="code-var">projeto</span> = <span class="code-fn">trionScale</span>.<span class="code-fn">iniciar</span>({
+  <span class="code-prop">fase1</span>: <span class="code-str">'diagnostico'</span>,
+  <span class="code-prop">fase2</span>: <span class="code-str">'desenho'</span>,
+  <span class="code-prop">fase3</span>: <span class="code-str">'prototipagem'</span>,
+  <span class="code-prop">fase4</span>: <span class="code-str">'producao'</span>,
+  <span class="code-prop">fase5</span>: <span class="code-str">'melhoria_continua'</span>,
+  <span class="code-prop">licencas</span>: <span class="code-bool">false</span>,
+  <span class="code-prop">lockIn</span>: <span class="code-bool">false</span>,
+  <span class="code-prop">roi</span>: <span class="code-str">'mensuravel'</span>
+})
+
+<span class="code-comment">// Resultado garantido</span>
+<span class="code-keyword">await</span> <span class="code-var">projeto</span>.<span class="code-fn">executar</span>()
+<span class="code-comment">// ✓ Em produção — 87 dias</span></code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== DIFERENCIAL ===================== -->
+  <section class="section" id="diferencial">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Diferencial</span>
+        <h2 class="section-title">IA genérica vs.<br />IA sob medida</h2>
+        <p class="section-subtitle">A maioria das soluções de IA são genéricas. A Trion Scale constrói o que a sua empresa realmente precisa.</p>
+      </div>
+
+      <div class="comparison-table reveal">
+        <div class="comparison-col comparison-generic">
+          <div class="comparison-header">
+            <div class="comparison-icon bad"><i class="fas fa-times"></i></div>
+            <h3>IA Genérica</h3>
+            <p>Plataformas e ferramentas prontas</p>
+          </div>
+          <ul class="comparison-list">
+            <li class="bad"><i class="fas fa-times-circle"></i> Não se adapta aos seus dados específicos</li>
+            <li class="bad"><i class="fas fa-times-circle"></i> Integrações limitadas e complexas</li>
+            <li class="bad"><i class="fas fa-times-circle"></i> Dependência de licenças mensais</li>
+            <li class="bad"><i class="fas fa-times-circle"></i> Lock-in na plataforma do fornecedor</li>
+            <li class="bad"><i class="fas fa-times-circle"></i> ROI difícil de medir e atribuir</li>
+            <li class="bad"><i class="fas fa-times-circle"></i> Escala cara e imprevisível</li>
+          </ul>
+        </div>
+        <div class="comparison-divider">
+          <div class="comparison-vs">VS</div>
+        </div>
+        <div class="comparison-col comparison-custom">
+          <div class="comparison-header">
+            <div class="comparison-icon good"><i class="fas fa-check"></i></div>
+            <h3>IA Sob Medida <span class="brand-tag">Trion Scale</span></h3>
+            <p>Construída para o seu contexto</p>
+          </div>
+          <ul class="comparison-list">
+            <li class="good"><i class="fas fa-check-circle"></i> Treinada nos seus dados e processos</li>
+            <li class="good"><i class="fas fa-check-circle"></i> Integrada ao seu stack existente</li>
+            <li class="good"><i class="fas fa-check-circle"></i> Sem licenças — o código é seu</li>
+            <li class="good"><i class="fas fa-check-circle"></i> Sem lock-in — total flexibilidade</li>
+            <li class="good"><i class="fas fa-check-circle"></i> KPIs definidos e ROI mensurável</li>
+            <li class="good"><i class="fas fa-check-circle"></i> Escala previsível e controlada</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CASOS DE SUCESSO ===================== -->
+  <section class="section section-alt" id="casos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Casos de Sucesso</span>
+        <h2 class="section-title">Resultados reais.<br />Empresas reais.</h2>
+        <p class="section-subtitle">Não prometemos — demonstramos. Cada projeto começa com um desafio claro e termina com resultados mensuráveis.</p>
+      </div>
+
+      <div class="cases-grid">
+        <div class="case-card reveal">
+          <div class="case-sector">
+            <span class="sector-tag"><i class="fas fa-industry"></i> Indústria</span>
+            <span class="case-type">Agente de IA Visual</span>
+          </div>
+          <h3 class="case-title">Automação de Controlo de Qualidade</h3>
+          <p class="case-challenge"><strong>Desafio:</strong> Inspeção manual de qualidade consumia 12h por turno, com 8% de taxa de erro — impactando produtividade e conformidade.</p>
+          <p class="case-solution"><strong>Solução:</strong> Agente de IA visual integrado ao sistema MES para deteção automática de defeitos em tempo real.</p>
+          <div class="case-result">
+            <div class="result-metric">
+              <span class="result-num">60%</span>
+              <span class="result-label">redução no tempo de inspeção</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-num">95%</span>
+              <span class="result-label">precisão na deteção</span>
+            </div>
+          </div>
+          <a href="#" class="case-link">Ver caso completo <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="case-card reveal">
+          <div class="case-sector">
+            <span class="sector-tag"><i class="fas fa-truck"></i> Logística</span>
+            <span class="case-type">Automação de Processos</span>
+          </div>
+          <h3 class="case-title">Otimização de Rotas e Planeamento</h3>
+          <p class="case-challenge"><strong>Desafio:</strong> Planeamento manual de rotas resultava em 25% de capacidade desperdiçada e atrasos frequentes nas entregas.</p>
+          <p class="case-solution"><strong>Solução:</strong> Sistema de automação inteligente de planeamento integrado ao TMS existente, com otimização em tempo real.</p>
+          <div class="case-result">
+            <div class="result-metric">
+              <span class="result-num">35%</span>
+              <span class="result-label">aumento na eficiência</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-num">-28%</span>
+              <span class="result-label">custo por entrega</span>
+            </div>
+          </div>
+          <a href="#" class="case-link">Ver caso completo <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="case-card reveal">
+          <div class="case-sector">
+            <span class="sector-tag"><i class="fas fa-landmark"></i> Serviços Financeiros</span>
+            <span class="case-type">Software Sob Medida</span>
+          </div>
+          <h3 class="case-title">Processamento Inteligente de Documentos</h3>
+          <p class="case-challenge"><strong>Desafio:</strong> Equipa de 6 pessoas dedicada exclusivamente a extrair e classificar dados de documentos — 40h por semana, alto erro humano.</p>
+          <p class="case-solution"><strong>Solução:</strong> Plataforma de IA de extração, classificação e validação automática integrada ao CRM e sistema de gestão.</p>
+          <div class="case-result">
+            <div class="result-metric">
+              <span class="result-num">80%</span>
+              <span class="result-label">eliminação do processo manual</span>
+            </div>
+            <div class="result-metric">
+              <span class="result-num">3×</span>
+              <span class="result-label">mais rápido</span>
+            </div>
+          </div>
+          <a href="#" class="case-link">Ver caso completo <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROVA SOCIAL ===================== -->
+  <section class="section" id="prova-social">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Empresas que confiam na Trion Scale</span>
+        <h2 class="section-title">Parceiros que escolheram<br />IA com propósito</h2>
+      </div>
+
+      <!-- Logo Marquee -->
+      <div class="logos-marquee reveal">
+        <div class="logos-track">
+          <div class="logo-item">TechCorp</div>
+          <div class="logo-item">LogiPrime</div>
+          <div class="logo-item">FinanceHub</div>
+          <div class="logo-item">IndustriMax</div>
+          <div class="logo-item">HealthPlus</div>
+          <div class="logo-item">RetailPro</div>
+          <div class="logo-item">DataFlow</div>
+          <div class="logo-item">NovaSystems</div>
+          <!-- Duplicates for loop -->
+          <div class="logo-item">TechCorp</div>
+          <div class="logo-item">LogiPrime</div>
+          <div class="logo-item">FinanceHub</div>
+          <div class="logo-item">IndustriMax</div>
+          <div class="logo-item">HealthPlus</div>
+          <div class="logo-item">RetailPro</div>
+          <div class="logo-item">DataFlow</div>
+          <div class="logo-item">NovaSystems</div>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="testimonials reveal">
+        <div class="testimonials-slider" id="testimonialsSlider">
+          <div class="testimonial-slide active">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <blockquote class="testimonial-quote">
+                "A Trion Scale entendeu o nosso contexto desde o primeiro dia. Em 3 meses, automatizámos processos que consumiam semanas da nossa equipa. O ROI foi claro muito antes do que esperávamos."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar">MC</div>
+                <div class="author-info">
+                  <span class="author-name">Miguel Costa</span>
+                  <span class="author-role">COO — Empresa de Logística B2B</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <blockquote class="testimonial-quote">
+                "Finalmente encontrámos um parceiro técnico que fala a linguagem do negócio e entrega resultados reais. Sem black-boxes, sem licenças — o código ficou connosco."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar">SR</div>
+                <div class="author-info">
+                  <span class="author-name">Sofia Rodrigues</span>
+                  <span class="author-role">CIO — Grupo Industrial</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <blockquote class="testimonial-quote">
+                "O ROI ficou claro nos primeiros 90 dias. IA aplicada com pragmatismo — sem hype, sem promessas vazias. Estamos agora a expandir para outras áreas do negócio."
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar">JP</div>
+                <div class="author-info">
+                  <span class="author-name">João Pinto</span>
+                  <span class="author-role">Diretor de Inovação — Serviços Financeiros</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials-controls">
+          <button class="testimonial-btn" id="prevBtn" onclick="changeTestimonial(-1)"><i class="fas fa-chevron-left"></i></button>
+          <div class="testimonial-dots" id="testimonialDots">
+            <span class="t-dot active" onclick="goToTestimonial(0)"></span>
+            <span class="t-dot" onclick="goToTestimonial(1)"></span>
+            <span class="t-dot" onclick="goToTestimonial(2)"></span>
+          </div>
+          <button class="testimonial-btn" id="nextBtn" onclick="changeTestimonial(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEGURANÇA ===================== -->
+  <section class="section section-alt" id="seguranca">
+    <div class="container">
+      <div class="security-wrapper reveal">
+        <div class="security-text">
+          <span class="section-label">Segurança e Integração</span>
+          <h2 class="section-title">Confiança não é<br />opcional.</h2>
+          <p class="section-subtitle">Segurança enterprise incorporada em cada camada — desde a infraestrutura até à aplicação.</p>
+          <div class="security-badges">
+            <div class="security-badge"><i class="fas fa-shield-alt"></i> GDPR Compliant</div>
+            <div class="security-badge"><i class="fas fa-lock"></i> SSL / TLS</div>
+            <div class="security-badge"><i class="fas fa-database"></i> Data Encryption</div>
+            <div class="security-badge"><i class="fas fa-key"></i> Zero Lock-in</div>
+          </div>
+        </div>
+        <div class="security-features">
+          <div class="security-feature">
+            <div class="sf-icon"><i class="fas fa-plug"></i></div>
+            <div class="sf-content">
+              <h4>Integração nativa com ERPs, CRMs e bases de dados</h4>
+              <p>APIs, webhooks e conectores para os principais sistemas empresariais. Sem duplicação de dados.</p>
+            </div>
+          </div>
+          <div class="security-feature">
+            <div class="sf-icon"><i class="fas fa-code-branch"></i></div>
+            <div class="sf-content">
+              <h4>O código e os dados são seus, sempre</h4>
+              <p>Sem dependência de licenças — entregamos código-fonte completo e documentado. Total portabilidade.</p>
+            </div>
+          </div>
+          <div class="security-feature">
+            <div class="sf-icon"><i class="fas fa-balance-scale"></i></div>
+            <div class="sf-content">
+              <h4>Conformidade com GDPR e proteção de dados</h4>
+              <p>Processos e arquiteturas desenhados para conformidade desde o início. Auditáveis e transparentes.</p>
+            </div>
+          </div>
+          <div class="security-feature">
+            <div class="sf-icon"><i class="fas fa-eye"></i></div>
+            <div class="sf-content">
+              <h4>Arquitetura segura e auditável</h4>
+              <p>Logs completos, rastreabilidade de decisões de IA e monitorização contínua de comportamentos anómalos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RECURSOS ===================== -->
+  <section class="section" id="recursos">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Recursos</span>
+        <h2 class="section-title">Conhecimento que<br />transforma decisões.</h2>
+        <p class="section-subtitle">Conteúdos práticos e educativos para decisores que querem aplicar IA de forma intencional e pragmática.</p>
+      </div>
+
+      <div class="resources-grid">
+        <div class="resource-card reveal">
+          <div class="resource-category">Operações</div>
+          <h3 class="resource-title">Como aplicar IA em processos financeiros sem substituir o seu ERP</h3>
+          <p class="resource-desc">Um guia prático para líderes de tecnologia e operações que querem integrar IA sem reescrever o stack existente.</p>
+          <div class="resource-meta">
+            <span><i class="fas fa-clock"></i> 8 min de leitura</span>
+            <a href="#" class="resource-link">Ler artigo <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="resource-card reveal">
+          <div class="resource-category">Agentes de IA</div>
+          <h3 class="resource-title">Agentes de IA vs Chatbots: qual a diferença e quando usar cada um</h3>
+          <p class="resource-desc">Entenda as diferenças técnicas e estratégicas — e como escolher a abordagem certa para o seu caso de uso específico.</p>
+          <div class="resource-meta">
+            <span><i class="fas fa-clock"></i> 6 min de leitura</span>
+            <a href="#" class="resource-link">Ler artigo <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="resource-card reveal">
+          <div class="resource-category">Automação</div>
+          <h3 class="resource-title">5 sinais de que a sua empresa está pronta para automação com IA</h3>
+          <p class="resource-desc">Antes de investir, avalie a maturidade dos seus dados e processos com estes 5 indicadores práticos de prontidão.</p>
+          <div class="resource-meta">
+            <span><i class="fas fa-clock"></i> 5 min de leitura</span>
+            <a href="#" class="resource-link">Ler artigo <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="resources-cta reveal">
+        <a href="#" class="btn btn-outline">Ver todos os recursos <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SOBRE ===================== -->
+  <section class="section section-alt" id="sobre">
+    <div class="container">
+      <div class="about-wrapper reveal">
+        <div class="about-text">
+          <span class="section-label">Sobre a Trion Scale</span>
+          <h2 class="section-title">Acreditamos que a IA<br />deve servir o negócio.</h2>
+          <p class="about-desc">A Trion Scale nasceu da convicção de que a inteligência artificial só cria valor real quando é aplicada com intenção, profundidade técnica e foco em resultados de negócio mensuráveis.</p>
+          <p class="about-desc">Não somos uma consultoria genérica que fala de IA como tendência. Somos engenheiros, arquitectos de software e consultores de negócio que constroem soluções que funcionam — e que ficam com os clientes a longo prazo.</p>
+          <a href="#contacto" class="btn btn-primary" onclick="openModal()">Falar com especialista</a>
+        </div>
+        <div class="about-pillars">
+          <div class="pillar-card">
+            <div class="pillar-num">01</div>
+            <h4>Expertise Técnica Profunda</h4>
+            <p>Engenheiros de IA, arquitectos de software e especialistas em dados — com experiência em projetos complexos para grandes empresas.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-num">02</div>
+            <h4>Foco em Resultados de Negócio</h4>
+            <p>Cada projeto começa com KPIs claros e termina com resultados mensuráveis. Tecnologia é o meio — impacto é o fim.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-num">03</div>
+            <h4>Parceria de Longo Prazo</h4>
+            <p>Não entregamos apenas projetos — construímos capacidades. A solução melhora com o tempo, e a sua equipa cresce connosco.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section class="section cta-section" id="cta-final">
+    <div class="cta-bg">
+      <div class="cta-grid-pattern"></div>
+      <div class="cta-glow"></div>
+    </div>
+    <div class="container cta-content reveal">
+      <h2 class="cta-title">Pronto para transformar o seu<br />negócio com IA?</h2>
+      <p class="cta-subtitle">Agende um diagnóstico gratuito e descubra como a IA sob medida<br class="hide-mobile" />pode impactar os seus resultados — sem compromisso.</p>
+      <div class="cta-buttons">
+        <button class="btn btn-white btn-large" onclick="openModal()">
+          Agendar Diagnóstico <i class="fas fa-arrow-right"></i>
+        </button>
+        <a href="mailto:contacto@trionscale.com" class="btn btn-outline-white btn-large">
+          Falar com Especialista
+        </a>
+      </div>
+      <div class="cta-trust">
+        <span><i class="fas fa-check"></i> Sem compromisso</span>
+        <span><i class="fas fa-check"></i> Diagnóstico gratuito</span>
+        <span><i class="fas fa-check"></i> Resposta em 24 horas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="footer">
+    <div class="container footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <span class="logo-icon">⬡</span>
+            <span class="logo-text">Trion<span class="logo-accent">Scale</span></span>
+          </a>
+          <p class="footer-desc">IA sob medida para empresas que querem resultados reais — sem licenças proprietárias, sem promessas vazias.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="footer-nav">
+          <div class="footer-col">
+            <h5>Soluções</h5>
+            <a href="#solucoes">Agentes de IA</a>
+            <a href="#solucoes">Automações Inteligentes</a>
+            <a href="#solucoes">Software Sob Medida</a>
+          </div>
+          <div class="footer-col">
+            <h5>Empresa</h5>
+            <a href="#sobre">Sobre a Trion Scale</a>
+            <a href="#casos">Casos de Sucesso</a>
+            <a href="#recursos">Recursos</a>
+          </div>
+          <div class="footer-col">
+            <h5>Contacto</h5>
+            <a href="mailto:contacto@trionscale.com">contacto@trionscale.com</a>
+            <a href="#" onclick="openModal()">Agendar Diagnóstico</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Trion Scale. Todos os direitos reservados.</p>
+        <div class="footer-legal">
+          <a href="#">Política de Privacidade</a>
+          <a href="#">Termos de Utilização</a>
+          <a href="#">Gestão de Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL CONTACTO ===================== -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModalIfOutside(event)">
+    <div class="modal" id="contactModal">
+      <button class="modal-close" onclick="closeModal()" aria-label="Fechar">&times;</button>
+      <div class="modal-header">
+        <div class="modal-logo">
+          <span class="logo-icon">⬡</span>
+          <span class="logo-text">Trion<span class="logo-accent">Scale</span></span>
+        </div>
+        <h2 class="modal-title">Agende o seu Diagnóstico Gratuito</h2>
+        <p class="modal-subtitle">Preencha o formulário e a nossa equipa entrará em contacto em até 24 horas.</p>
+      </div>
+      <form class="contact-form" id="contactForm" onsubmit="submitForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nome">Nome *</label>
+            <input type="text" id="nome" name="nome" placeholder="O seu nome" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Corporativo *</label>
+            <input type="email" id="email" name="email" placeholder="nome@empresa.com" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="empresa">Empresa *</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required />
+          </div>
+          <div class="form-group">
+            <label for="cargo">Cargo *</label>
+            <select id="cargo" name="cargo" required>
+              <option value="" disabled selected>Selecionar cargo</option>
+              <option>COO / Diretor de Operações</option>
+              <option>CIO / Head de IT</option>
+              <option>Diretor de Inovação</option>
+              <option>CEO / Fundador</option>
+              <option>Outro</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="interesse">Área Principal de Interesse *</label>
+          <select id="interesse" name="interesse" required>
+            <option value="" disabled selected>Selecionar área</option>
+            <option>Agentes de IA Personalizados</option>
+            <option>Automações Inteligentes de Processos</option>
+            <option>Software Sob Medida com IA</option>
+            <option>Diagnóstico Geral de Oportunidades</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="descricao">Breve descrição do desafio ou objetivo</label>
+          <textarea id="descricao" name="descricao" placeholder="Descreva em poucas palavras o principal processo ou desafio que quer abordar com IA..." rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          Enviar Pedido <i class="fas fa-arrow-right"></i>
+        </button>
+        <p class="form-privacy"><i class="fas fa-lock"></i> Os seus dados estão seguros. Não partilhamos com terceiros.</p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+        <h3>Pedido enviado com sucesso!</h3>
+        <p>Obrigado pelo interesse. A nossa equipa entrará em contacto em até <strong>24 horas</strong> para agendar o seu diagnóstico gratuito.</p>
+        <button class="btn btn-primary" onclick="closeModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll to top button -->
+  <button class="scroll-top" id="scrollTopBtn" onclick="scrollToTop()" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
