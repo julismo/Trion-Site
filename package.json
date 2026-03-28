@@ -1,0 +1,13 @@
+{
+  "name": "trion-scale",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev:web": "pnpm --filter web dev",
+    "dev:api": "cd apps/api && uvicorn src.api.main:app --reload",
+    "lint:py": "cd apps/api && ruff check . && cd ../../packages/shared && ruff check .",
+    "format:py": "cd apps/api && ruff format . && cd ../../packages/shared && ruff format .",
+    "typecheck:py": "cd apps/api && mypy src/",
+    "test:api": "cd apps/api && pytest"
+  }
+}

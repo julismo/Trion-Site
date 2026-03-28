@@ -1,0 +1,153 @@
+================================================================================
+PROGRESS LOG — Trion Scale Monorepo
+================================================================================
+Padrão: nunca sobrescrever — sempre append.
+Formato: [DATA] TAREFA | Ficheiros | Padrões/Gotchas
+
+--------------------------------------------------------------------------------
+[2026-03-27] MILESTONE 0 — Scaffold do Monorepo (PNPM Workspaces)
+--------------------------------------------------------------------------------
+O QUE FOI FEITO:
+- Inicializada estrutura de Monorepo PNPM com workspaces
+- Site vanilla existente movido para apps/web/ (git mv para preservar histórico)
+- Scaffold FastAPI criado em apps/api/ com strict typing (mypy strict)
+- Schemas Pydantic centralizados em packages/shared/
+- Ruff configurado para linting + formatting (substitui black + isort + flake8)
+- pre-commit hooks configurados: ruff, ruff-format, mypy, pre-commit-hooks
+- directives/ populada com specs.md (PRD), milestones.md e constraints.md
+- .env.example com todos os placeholders (DATABASE_URL via Tailscale)
+
+FICHEIROS CRIADOS/MODIFICADOS:
+- pnpm-workspace.yaml (novo)
+- package.json (root, novo)
+- .env.example (novo)
+- .gitignore (novo)
+- .pre-commit-config.yaml (novo)
+- progress.txt (este ficheiro, novo)
+- directives/specs.md (novo — PRD completo)
+- directives/milestones.md (novo)
+- directives/constraints.md (novo)
+- apps/web/ (movido de raiz: index.html, css/, js/, docs/)
+- apps/web/package.json (novo)
+- apps/api/pyproject.toml (novo)
+- apps/api/.python-version (novo — Python 3.12)
+- apps/api/src/api/main.py (novo)
+- apps/api/src/api/config.py (novo)
+- apps/api/src/api/routers/__init__.py (novo)
+- apps/api/tests/test_main.py (novo)
+- packages/shared/pyproject.toml (novo)
+- packages/shared/src/shared/schemas/lead.py (novo)
+
+PADRÕES DESCOBERTOS:
+- DATABASE_URL deve sempre apontar para IP Tailscale (100.x.x.x), nunca IP público
+- pydantic-settings lê .env automaticamente via model_config = SettingsConfigDict(env_file=".env")
+- mypy strict + pydantic.mypy plugin é o setup recomendado para FastAPI com tipagem completa
+- Ruff v0.9+ unifica linting + formatting — substitui black, isort, flake8 num único binário
+
+PRÓXIMOS PASSOS (Milestone 1):
+- Definir base de dados (Supabase vs Postgres direto via Tailscale)
+- Criar router /leads no FastAPI com endpoint POST /leads
+- Integrar packages/shared/lead.py como schema do endpoint
+- Configurar autenticação (API key ou JWT para endpoints internos)
+
+================================================================================
+## Codebase Patterns
+================================================================================
+- Settings: sempre via pydantic_settings.BaseSettings — nunca hardcode
+- Schemas: sempre em packages/shared/src/shared/schemas/ — importar nos dois lados
+- Ruff: target-version="py312", select=["E","F","I","UP","ANN","B"]
+
+================================================================================
+## Sessão 2026-03-28 — React Migration + Visual Audit
+================================================================================
+
+### Tarefas concluídas
+- Migração completa HTML → Next.js 15 (App Router, TypeScript)
+- Todas as secções migradas: Hero, ParaQuem, Solucoes, Metodologia, Diferencial,
+  ProvaSocial (logos marquee + testimonials slider), Seguranca, Sobre, CTA, Footer
+- Sistema de partículas Three.js: triângulo/constelação, spring physics, GLSL shaders
+- InfiniteSlider duplo (2 rows de tech stack)
+- Modal de contacto (Formspree xykbzqjg)
+- Rebranding completo: oklch dark palette, laranja accent
+
+### Fixes desta sessão (pós-build)
+- Footer.tsx: adicionado 'use client' (evento handlers sem diretiva causava 500)
+- Deps instaladas manualmente: three, @types/three, motion, lucide-react, clsx, tailwind-merge
+- ParaQuemSection: emojis → Lucide icons (Settings2, Shield, FlaskConical, TrendingUp)
+- SobreSection: emojis → Lucide icons (Zap, Eye, Handshake)
+- SolucoesSection: className="sol-grid" adicionado ao inner grid (responsive fix)
+- ProvaSocialSection: @keyframes marquee duplicado removido; usa 'slide' do globals.css
+- ParticleSystem: alpha 0.85→0.45, pointSize max 2.5→1.8 (fix glow overblown)
+
+### Estado atual
+- Dev server: localhost:3000 (npm run dev em apps/web)
+- Build: passa sem erros (EXIT:0)
+- Playwright audit: todas as secções visíveis e funcionais no DOM
+
+### Para o próximo PRD
+- Mobile responsiveness audit (breakpoints)
+- Modal de contacto: testar submissão real ao Formspree
+- prefers-reduced-motion nos sliders e partículas
+- SobreSection: rever visibilidade dos cards antes do scroll trigger
+- Vercel deploy: push + verificar build standalone
+
+### Codebase Patterns (Next.js)
+- Componentes com event handlers obrigatoriamente 'use client'
+- Three.js: dynamic import com ssr:false (evita SSR crash)
+- Tailwind v4: sem tailwind.config.ts — custom utilities em globals.css @layer
+- IntersectionObserver para scroll-reveal em vez de framer-motion em cada secção
+- Screenshot Playwright + Three.js: canvas bloqueia idle — esconder canvas antes de screenshot
+
+--------------------------------------------------------------------------------
+[2026-03-28] feat/react-original — Port fiel HTML→React (Sessão 2)
+--------------------------------------------------------------------------------
+O QUE FOI FEITO:
+- Completada a implementação do branch feat/react-original (port 100% fiel do site original)
+- Reescrito app/layout.tsx: Inter font via next/font/google + FontAwesome 6.4.0 via CDN link
+- Reescrito app/page.tsx: client component com useState(modalOpen) gerindo modal globalmente
+- Reescritos todos os componentes — zero invenções, 1:1 com o index.html original:
+  * Header.tsx: sticky + scroll effect + hamburger mobile (useState + useEffect)
+  * Footer.tsx: 3 colunas, brand, socials — recebe onOpenModal prop
+  * HeroSection.tsx: badge, gradient h1, metrics ticker (IntersectionObserver para reveal)
+  * ParaQuemSection.tsx: 4 persona cards com FA icons originais
+  * SolucoesSection.tsx: 3 solutions com visual cards mockup idênticos ao HTML
+  * MetodologiaSection.tsx: 5 steps + code block visual
+  * DiferencialSection.tsx: comparison table IA genérica vs. IA sob medida
+  * SegurancaSection.tsx: badges + 4 security features
+  * SobreSection.tsx: about text + 3 pillar cards
+  * CtaSection.tsx: dark CTA com radial glow
+  * ContactModal.tsx: form Formspree xykbzqjg + success state (useState)
+  * ScrollToTop.tsx: botão scroll-to-top (useState + useEffect)
+- CSS: globals.css já continha o style.css original na íntegra (2250 linhas)
+- Build: npm run build → ✓ zero erros TypeScript, página estática gerada
+
+FICHEIROS ALTERADOS:
+- apps/web/app/layout.tsx
+- apps/web/app/page.tsx
+- apps/web/components/layout/Header.tsx
+- apps/web/components/layout/Footer.tsx
+- apps/web/components/sections/HeroSection.tsx
+- apps/web/components/sections/ParaQuemSection.tsx
+- apps/web/components/sections/SolucoesSection.tsx
+- apps/web/components/sections/MetodologiaSection.tsx
+- apps/web/components/sections/DiferencialSection.tsx
+- apps/web/components/sections/SegurancaSection.tsx
+- apps/web/components/sections/SobreSection.tsx
+- apps/web/components/sections/CtaSection.tsx
+- apps/web/components/ui/ContactModal.tsx
+- apps/web/components/ui/ScrollToTop.tsx (novo)
+
+PADRÕES/GOTCHAS:
+- Modal state deve ficar no page.tsx (client component) e ser passado como prop — não usar context nem window globals
+- Footer sem 'use client' funciona pois não tem event handlers inline (onClick passa função, não arrow inline no JSX)
+- IntersectionObserver para .reveal deve ficar no HeroSection (primeiro componente) para funcionar para toda a página
+- O server Next.js usa detecção de múltiplos servidores via .next/dev/logs — matar o processo PID antes de iniciar novo
+- Para iniciar dev server: cd apps/web && npm run dev (o utilizador deve fazer manualmente se houver conflito de porta)
+
+PRÓXIMA SESSÃO:
+- Correr npm run dev e auditar visualmente com Playwright vs. https://trion-site.vercel.app/
+- Verificar reveal animations (IntersectionObserver funciona no Next.js/React)
+- Verificar ticker animation (CSS animation `slide` no globals.css)
+- Verificar hamburger mobile
+- Testar submit do modal (Formspree)
+- Deploy para Vercel se tudo OK
