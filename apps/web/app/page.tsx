@@ -7,8 +7,11 @@ import HeroSection from '@/components/sections/HeroSection'
 import ParaQuemSection from '@/components/sections/ParaQuemSection'
 import SolucoesSection from '@/components/sections/SolucoesSection'
 import MetodologiaSection from '@/components/sections/MetodologiaSection'
+import CasosSection from '@/components/sections/CasosSection'
+import ProvaSocialSection from '@/components/sections/ProvaSocialSection'
 import DiferencialSection from '@/components/sections/DiferencialSection'
 import SegurancaSection from '@/components/sections/SegurancaSection'
+import RecursosSection from '@/components/sections/RecursosSection'
 import SobreSection from '@/components/sections/SobreSection'
 import CtaSection from '@/components/sections/CtaSection'
 import ContactModal from '@/components/ui/ContactModal'
@@ -35,8 +38,11 @@ export default function Home() {
         <ParaQuemSection />
         <SolucoesSection />
         <MetodologiaSection />
+        <CasosSection />
+        <ProvaSocialSection />
         <DiferencialSection />
         <SegurancaSection />
+        <RecursosSection />
         <SobreSection onOpenModal={openModal} />
         <CtaSection onOpenModal={openModal} />
       </main>

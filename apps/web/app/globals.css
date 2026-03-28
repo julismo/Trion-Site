@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 /* ============================================================
    TRION SCALE — Main Stylesheet
    Modern B2B AI Company Website
@@ -57,7 +59,7 @@
   --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-  --max-width: 1200px;
+  --max-width: 1280px;
   --header-height: 72px;
 }
 
@@ -71,6 +73,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -98,9 +101,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ---- Layout ---- */
 .container {
+  width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 .section {
@@ -136,12 +140,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .section-subtitle {
   font-size: var(--font-size-lg);
   color: var(--color-gray-500);
-  max-width: 600px;
+  max-width: 640px;
   line-height: 1.7;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .section-header {
   margin-bottom: 4rem;
+  text-align: center;
 }
 
 .gradient-text {
@@ -597,8 +604,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .solution-item {
   display: grid;
-  grid-template-columns: 80px 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 60px 1fr 1fr;
+  gap: 2.5rem;
   align-items: start;
 }
 
@@ -2240,8 +2247,8 @@ code { white-space: pre; }
 /* ---- Tablet Adjustments ---- */
 @media (min-width: 769px) and (max-width: 1024px) {
   .solution-item {
-    grid-template-columns: 60px 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 50px 1fr 1fr;
+    gap: 1.75rem;
   }
 
   .process-wrapper { gap: 2.5rem; }

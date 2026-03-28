@@ -1,349 +1,157 @@
-'use client';
+'use client'
+import { useState, useEffect, useCallback, useRef } from 'react'
+import { cn } from '@/lib/utils'
 
-import { useEffect, useRef, useState, useCallback } from 'react';
-
-const companies = [
+const logos = [
   'TechCorp', 'LogiPrime', 'FinanceHub', 'IndustriMax',
   'HealthPlus', 'RetailPro', 'DataFlow', 'NovaSystems',
-];
+]
 
-interface Testimonial {
-  quote: string;
-  name: string;
-  role: string;
-  company: string;
-  initials: string;
-}
-
-const testimonials: Testimonial[] = [
+const testimonials = [
   {
-    quote:
-      'A Trion Scale entendeu o nosso contexto desde o primeiro dia. Em 3 meses, automatizámos processos que consumiam semanas da nossa equipa. O ROI foi claro muito antes do que esperávamos.',
-    name: 'Miguel Costa',
-    role: 'COO',
-    company: 'Empresa de Logística B2B',
+    quote: 'A Trion Scale entendeu o nosso contexto desde o primeiro dia. Em 3 meses, automatizámos processos que consumiam semanas da nossa equipa. O ROI foi claro muito antes do que esperávamos.',
     initials: 'MC',
+    name: 'Miguel Costa',
+    role: 'COO — Empresa de Logística B2B',
   },
   {
-    quote:
-      'Finalmente encontrámos um parceiro técnico que fala a linguagem do negócio e entrega resultados reais. Sem black-boxes, sem licenças — o código ficou connosco.',
-    name: 'Sofia Rodrigues',
-    role: 'CIO',
-    company: 'Grupo Industrial',
+    quote: 'Finalmente encontrámos um parceiro técnico que fala a linguagem do negócio e entrega resultados reais. Sem black-boxes, sem licenças — o código ficou connosco.',
     initials: 'SR',
+    name: 'Sofia Rodrigues',
+    role: 'CIO — Grupo Industrial',
   },
   {
-    quote:
-      'O ROI ficou claro nos primeiros 90 dias. IA aplicada com pragmatismo — sem hype, sem promessas vazias. Estamos agora a expandir para outras áreas do negócio.',
-    name: 'João Pinto',
-    role: 'Diretor de Inovação',
-    company: 'Serviços Financeiros',
+    quote: 'O ROI ficou claro nos primeiros 90 dias. IA aplicada com pragmatismo — sem hype, sem promessas vazias. Estamos agora a expandir para outras áreas do negócio.',
     initials: 'JP',
+    name: 'João Pinto',
+    role: 'Diretor de Inovação — Serviços Financeiros',
   },
-];
+]
 
 export default function ProvaSocialSection() {
-  const [current, setCurrent] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  const goTo = useCallback(
-    (index: number) => {
-      if (isAnimating) return;
-      setIsAnimating(true);
-      setTimeout(() => {
-        setCurrent(index);
-        setIsAnimating(false);
-      }, 200);
-    },
-    [isAnimating]
-  );
+  const [active, setActive] = useState(0)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   const next = useCallback(() => {
-    goTo((current + 1) % testimonials.length);
-  }, [current, goTo]);
+    setActive((prev) => (prev + 1) % testimonials.length)
+  }, [])
 
   const prev = useCallback(() => {
-    goTo((current - 1 + testimonials.length) % testimonials.length);
-  }, [current, goTo]);
+    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+  }, [])
+
+  const resetInterval = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(next, 5000)
+  }, [next])
 
   useEffect(() => {
-    intervalRef.current = setInterval(next, 5000);
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [next]);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(sectionRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  const resetInterval = () => {
-    if (intervalRef.current) clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(next, 5000);
-  };
-
-  const t = testimonials[current];
+    intervalRef.current = setInterval(next, 5000)
+    return () => { if (intervalRef.current) clearInterval(intervalRef.current) }
+  }, [next])
 
   return (
-    <section
-      ref={sectionRef}
-      id="prova-social"
-      style={{
-        padding: '96px 24px',
-        background: 'var(--muted)',
-        color: 'var(--foreground)',
-        overflow: 'hidden',
-      }}
-    >
-      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-        {/* Part A — Logo Marquee */}
-        <div
-          style={{
-            textAlign: 'center',
-            marginBottom: '64px',
-            transition: 'opacity 0.7s ease',
-            opacity: visible ? 1 : 0,
-          }}
-        >
-          <p
-            style={{
-              fontSize: '12px',
-              fontWeight: 600,
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: 'var(--muted-foreground)',
-              marginBottom: '28px',
-            }}
-          >
-            Empresas que confiam na Trion Scale
-          </p>
-          <h2
-            style={{
-              fontSize: 'clamp(22px, 3vw, 32px)',
-              fontWeight: 700,
-              color: 'var(--foreground)',
-              marginBottom: '32px',
-            }}
-          >
-            Parceiros que escolheram IA com propósito
+    <section className="section" id="prova-social">
+      <div className="container">
+        <div className="section-header reveal">
+          <span className="section-label">Empresas que confiam na Trion Scale</span>
+          <h2 className="section-title">
+            Parceiros que escolheram<br />IA com propósito
           </h2>
+        </div>
 
-          {/* Marquee */}
+        {/* Logo Marquee */}
+        <div className="logos-marquee reveal relative overflow-hidden mb-12 py-4">
           <div
-            style={{
-              overflow: 'hidden',
-              position: 'relative',
-              maskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
-              WebkitMaskImage: 'linear-gradient(to right, transparent, black 15%, black 85%, transparent)',
-            }}
+            className="flex gap-4 w-max hover:[animation-play-state:paused]"
+            style={{ animation: 'logoScroll 25s linear infinite' }}
           >
-            <div
-              style={{
-                display: 'flex',
-                gap: '16px',
-                animation: 'slide 22s linear infinite',
-                width: 'max-content',
-              }}
-            >
-              {[...companies, ...companies].map((name, i) => (
-                <span
-                  key={i}
-                  style={{
-                    display: 'inline-block',
-                    padding: '8px 20px',
-                    background: 'var(--background)',
-                    border: '1px solid var(--border)',
-                    borderRadius: '999px',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    color: 'var(--muted-foreground)',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  {name}
-                </span>
-              ))}
-            </div>
+            {[...logos, ...logos].map((name, i) => (
+              <div
+                className="inline-flex items-center justify-center px-5 py-2 bg-gray-50 border border-gray-200 rounded-full text-sm font-semibold text-gray-400 whitespace-nowrap transition-colors duration-300 hover:text-gray-500 hover:border-gray-300"
+                key={i}
+              >
+                {name}
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Divider */}
-        <div
-          style={{
-            height: '1px',
-            background: 'var(--border)',
-            margin: '0 0 64px',
-          }}
-        />
+        {/* Testimonials */}
+        <div className="reveal">
+          {/* Slider */}
+          <div className="relative overflow-hidden">
+            {testimonials.map((t, i) => (
+              <div
+                className={cn(
+                  'animate-[fadeInUp_0.4s_ease]',
+                  i === active ? 'block' : 'hidden'
+                )}
+                key={i}
+              >
+                <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-12 max-w-[800px] mx-auto text-center shadow-lg">
+                  {/* Stars */}
+                  <div className="flex justify-center gap-1 mb-6 text-amber-400 text-sm">
+                    {[...Array(5)].map((_, s) => (
+                      <i className="fas fa-star" key={s} />
+                    ))}
+                  </div>
 
-        {/* Part B — Testimonials */}
-        <div
-          style={{
-            transition: 'opacity 0.7s ease 0.2s',
-            opacity: visible ? 1 : 0,
-          }}
-        >
-          <div
-            style={{
-              maxWidth: '720px',
-              margin: '0 auto',
-              textAlign: 'center',
-            }}
-          >
-            {/* Quote block */}
-            <div
-              style={{
-                background: 'var(--background)',
-                border: '1px solid var(--border)',
-                borderRadius: '20px',
-                padding: '48px 40px',
-                marginBottom: '32px',
-                minHeight: '220px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                gap: '28px',
-                transition: 'opacity 0.2s ease',
-                opacity: isAnimating ? 0 : 1,
-              }}
+                  {/* Quote */}
+                  <blockquote className="text-lg md:text-xl font-medium text-[var(--color-primary)] leading-relaxed italic mb-8">
+                    &ldquo;{t.quote}&rdquo;
+                  </blockquote>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-4 justify-center">
+                    <div className="w-12 h-12 rounded-full bg-[var(--color-accent)] flex items-center justify-center text-sm font-bold text-white shrink-0">
+                      {t.initials}
+                    </div>
+                    <div className="flex flex-col gap-0.5 text-left">
+                      <span className="text-sm font-bold text-[var(--color-primary)]">{t.name}</span>
+                      <span className="text-xs text-gray-500">{t.role}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Controls */}
+          <div className="flex items-center justify-center gap-5 mt-8">
+            <button
+              onClick={() => { prev(); resetInterval() }}
+              aria-label="Anterior"
+              className="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-600 flex items-center justify-center text-sm cursor-pointer transition-colors duration-300 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
             >
-              {/* Large quote mark */}
-              <span
-                style={{
-                  fontSize: '56px',
-                  lineHeight: 0.8,
-                  color: 'var(--accent)',
-                  fontFamily: 'Georgia, serif',
-                  display: 'block',
-                  marginBottom: '4px',
-                }}
-              >
-                "
-              </span>
-              <p
-                style={{
-                  fontSize: 'clamp(16px, 2.2vw, 20px)',
-                  color: 'var(--foreground)',
-                  lineHeight: 1.7,
-                  fontStyle: 'italic',
-                  margin: 0,
-                }}
-              >
-                {t.quote}
-              </p>
+              <i className="fas fa-chevron-left" />
+            </button>
 
-              {/* Author */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px', justifyContent: 'center' }}>
-                <div
-                  style={{
-                    width: '48px',
-                    height: '48px',
-                    borderRadius: '50%',
-                    background: 'var(--accent)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '15px',
-                    fontWeight: 700,
-                    color: '#fff',
-                    flexShrink: 0,
-                  }}
-                >
-                  {t.initials}
-                </div>
-                <div style={{ textAlign: 'left' }}>
-                  <p style={{ fontSize: '15px', fontWeight: 700, color: 'var(--foreground)', margin: 0 }}>
-                    {t.name}
-                  </p>
-                  <p style={{ fontSize: '13px', color: 'var(--muted-foreground)', margin: 0 }}>
-                    {t.role} — {t.company}
-                  </p>
-                </div>
-              </div>
+            <div className="flex items-center gap-2">
+              {testimonials.map((_, i) => (
+                <span
+                  key={i}
+                  onClick={() => { setActive(i); resetInterval() }}
+                  className={cn(
+                    'h-2 rounded-full cursor-pointer transition-all duration-300',
+                    i === active
+                      ? 'w-6 bg-[var(--color-accent)]'
+                      : 'w-2 bg-gray-300'
+                  )}
+                />
+              ))}
             </div>
 
-            {/* Controls */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px' }}>
-              <button
-                onClick={() => { prev(); resetInterval(); }}
-                aria-label="Anterior"
-                style={{
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '50%',
-                  background: 'var(--background)',
-                  border: '1px solid var(--border)',
-                  color: 'var(--foreground)',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '16px',
-                  transition: 'border-color 0.2s',
-                }}
-              >
-                ←
-              </button>
-
-              {/* Dots */}
-              <div style={{ display: 'flex', gap: '8px' }}>
-                {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => { goTo(i); resetInterval(); }}
-                    aria-label={`Testemunho ${i + 1}`}
-                    style={{
-                      width: i === current ? '24px' : '8px',
-                      height: '8px',
-                      borderRadius: '999px',
-                      background: i === current ? 'var(--accent)' : 'var(--border)',
-                      border: 'none',
-                      cursor: 'pointer',
-                      transition: 'width 0.3s ease, background 0.3s ease',
-                      padding: 0,
-                    }}
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={() => { next(); resetInterval(); }}
-                aria-label="Próximo"
-                style={{
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '50%',
-                  background: 'var(--background)',
-                  border: '1px solid var(--border)',
-                  color: 'var(--foreground)',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontSize: '16px',
-                  transition: 'border-color 0.2s',
-                }}
-              >
-                →
-              </button>
-            </div>
+            <button
+              onClick={() => { next(); resetInterval() }}
+              aria-label="Próximo"
+              className="w-10 h-10 rounded-full bg-white border border-gray-200 text-gray-600 flex items-center justify-center text-sm cursor-pointer transition-colors duration-300 hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+            >
+              <i className="fas fa-chevron-right" />
+            </button>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
