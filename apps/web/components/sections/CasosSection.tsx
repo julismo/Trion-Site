@@ -61,7 +61,7 @@ export default function CasosSection() {
             >
               {/* Sector & type */}
               <div className="flex items-center justify-between mb-4">
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-accent)] bg-[rgba(14,165,233,0.08)] px-3 py-1 rounded-full">
+                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-accent)] bg-[rgba(255,107,44,0.08)] px-3 py-1 rounded-full">
                   <i className={`fas ${c.sectorIcon}`} /> {c.sector}
                 </span>
                 <span className="text-xs text-gray-500 font-medium">{c.type}</span>

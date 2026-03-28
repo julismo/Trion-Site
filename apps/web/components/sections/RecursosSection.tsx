@@ -42,7 +42,7 @@ export default function RecursosSection() {
               key={i}
             >
               {/* Category */}
-              <span className="inline-block text-xs font-semibold uppercase tracking-wide text-[var(--color-accent)] bg-[rgba(14,165,233,0.08)] px-3 py-1 rounded-full w-fit mb-4">
+              <span className="inline-block text-xs font-semibold uppercase tracking-wide text-[var(--color-accent)] bg-[rgba(255,107,44,0.08)] px-3 py-1 rounded-full w-fit mb-4">
                 {r.category}
               </span>
 
