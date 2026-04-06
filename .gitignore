@@ -25,3 +25,34 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# Audit screenshots & sessões antigas (Playwright + ad-hoc)
+audit-*.jpeg
+audit-*.png
+m-*.jpeg
+d-*.jpeg
+t-*.jpeg
+t800-*.jpeg
+flowzi_*.png
+section-*.jpeg
+redesign-*.jpeg
+hero-v2.jpeg
+tw-header-*.jpeg
+desktop-audit.png
+mobile-audit.png
+tablet-audit.png
+0[0-9]-*.png
+.playwright-mcp/
+localhost-hero-section.md
+vercel-hero-section.md
+vercel-site-full.png
+test_webhook.py
+
+# Next.js
+.next/
+out/
+build/
+
+# Lockfiles secundários (manter só package-lock.json)
+pnpm-lock.yaml
+yarn.lock
