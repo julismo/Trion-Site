@@ -1,0 +1,105 @@
+{
+  "title": "Grupo WebHub",
+  "fonts": [
+    {
+      "family": "Clash",
+      "weight": "700",
+      "status": "loaded"
+    },
+    {
+      "family": "Clash",
+      "weight": "500",
+      "status": "loaded"
+    },
+    {
+      "family": "Clash",
+      "weight": "400",
+      "status": "loaded"
+    },
+    {
+      "family": "Clash",
+      "weight": "300",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter",
+      "weight": "100 900",
+      "status": "loaded"
+    }
+  ],
+  "stylesheets": [
+    "https://grupowebhub.com.br/home/style.css"
+  ],
+  "scripts": [
+    "https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js",
+    "https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js",
+    "https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js",
+    "https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/SplitText.min.js",
+    "https://grupowebhub.com.br/home/script.js"
+  ]
+}

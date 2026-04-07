@@ -1,47 +1,51 @@
-export default function DiferencialSection() {
-  return (
-    <section className="section" id="diferencial">
-      <div className="container">
-        <div className="section-header reveal">
-          <span className="section-label">Diferencial</span>
-          <h2 className="section-title">IA genérica vs.<br />IA sob medida</h2>
-          <p className="section-subtitle">A maioria das soluções de IA são genéricas. A Trion Scale constrói o que a sua empresa realmente precisa.</p>
-        </div>
+'use client'
 
-        <div className="comparison-table reveal">
-          <div className="comparison-col comparison-generic">
-            <div className="comparison-header">
-              <div className="comparison-icon bad"><i className="fas fa-times"></i></div>
-              <h3>IA Genérica</h3>
-              <p>Plataformas e ferramentas prontas</p>
-            </div>
-            <ul className="comparison-list">
-              <li className="bad"><i className="fas fa-times-circle"></i> Não se adapta aos seus dados específicos</li>
-              <li className="bad"><i className="fas fa-times-circle"></i> Integrações limitadas e complexas</li>
-              <li className="bad"><i className="fas fa-times-circle"></i> Dependência de licenças mensais</li>
-              <li className="bad"><i className="fas fa-times-circle"></i> Lock-in na plataforma do fornecedor</li>
-              <li className="bad"><i className="fas fa-times-circle"></i> ROI difícil de medir e atribuir</li>
-              <li className="bad"><i className="fas fa-times-circle"></i> Escala cara e imprevisível</li>
+/**
+ * DIFERENCIAL — porque Trion vs concorrência.
+ * Layout 2 colunas: lista de pontos à esquerda, bloco visual à direita.
+ */
+
+import { Check } from 'lucide-react'
+import { FadeInScroll } from '@/components/animations/FadeInScroll'
+
+const PONTOS = [
+  'Lorem ipsum dolor sit amet consectetur adipiscing elit.',
+  'Lorem ipsum dolor sit amet consectetur.',
+  'Lorem ipsum dolor sit amet consectetur.',
+  'Lorem ipsum dolor sit amet consectetur.',
+]
+
+export function DiferencialSection() {
+  return (
+    <section className="px-6 py-32 lg:px-12">
+      <div className="mx-auto max-w-[1400px]">
+        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
+          <FadeInScroll>
+            <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[var(--color-accent)]">
+              Diferencial
+            </p>
+            <h2 className="mb-8 text-[clamp(1.75rem,3vw,2.75rem)] font-semibold leading-[1.05]">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit
+            </h2>
+            <ul className="space-y-4">
+              {PONTOS.map((p, i) => (
+                <li key={i} className="flex items-start gap-3 text-[var(--color-fg-muted)]">
+                  <span className="mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[var(--color-accent)] text-[var(--color-bg)]">
+                    <Check size={12} strokeWidth={3} />
+                  </span>
+                  {p}
+                </li>
+              ))}
             </ul>
-          </div>
-          <div className="comparison-divider">
-            <div className="comparison-vs">VS</div>
-          </div>
-          <div className="comparison-col comparison-custom">
-            <div className="comparison-header">
-              <div className="comparison-icon good"><i className="fas fa-check"></i></div>
-              <h3>IA Sob Medida <span className="brand-tag">Trion Scale</span></h3>
-              <p>Construída para o seu contexto</p>
+          </FadeInScroll>
+
+          <FadeInScroll delay={0.2}>
+            <div className="relative aspect-square rounded-[var(--radius-card)] border border-[var(--color-border)] bg-white/[0.03]">
+              <div className="absolute inset-0 flex items-center justify-center text-sm text-[var(--color-fg-subtle)]">
+                
+              </div>
             </div>
-            <ul className="comparison-list">
-              <li className="good"><i className="fas fa-check-circle"></i> Treinada nos seus dados e processos</li>
-              <li className="good"><i className="fas fa-check-circle"></i> Integrada ao seu stack existente</li>
-              <li className="good"><i className="fas fa-check-circle"></i> Sem licenças — o código é seu</li>
-              <li className="good"><i className="fas fa-check-circle"></i> Sem lock-in — total flexibilidade</li>
-              <li className="good"><i className="fas fa-check-circle"></i> KPIs definidos e ROI mensurável</li>
-              <li className="good"><i className="fas fa-check-circle"></i> Escala previsível e controlada</li>
-            </ul>
-          </div>
+          </FadeInScroll>
         </div>
       </div>
     </section>

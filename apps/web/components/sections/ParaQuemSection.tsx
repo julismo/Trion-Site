@@ -1,49 +1,62 @@
-export default function ParaQuemSection() {
+'use client'
+
+/**
+ * PARA QUEM — 4 personas em grid.
+ * Stagger entry via FadeInScroll com delays incrementais.
+ */
+
+import { Cog, MonitorCog, Lightbulb, TrendingUp } from 'lucide-react'
+import { FadeInScroll } from '@/components/animations/FadeInScroll'
+
+const PERSONAS = [
+  { icon: Cog, role: 'COO', label: 'Lorem ipsum dolor sit' },
+  { icon: MonitorCog, role: 'CIO', label: 'Lorem ipsum dolor sit' },
+  { icon: Lightbulb, role: 'Inovação', label: 'Lorem ipsum dolor sit' },
+  { icon: TrendingUp, role: 'CEO', label: 'Lorem ipsum dolor sit' },
+]
+
+export function ParaQuemSection() {
   return (
-    <section className="section section-alt" id="para-quem">
-      <div className="container">
-        <div className="section-header reveal">
-          <span className="section-label">Para Quem</span>
-          <h2 className="section-title">Criada para os decisores<br />que querem resultados reais</h2>
-          <p className="section-subtitle">A Trion Scale trabalha com líderes que já perceberam que IA genérica não resolve — e que precisam de um parceiro que entenda tanto de tecnologia como de negócio.</p>
-        </div>
-        <div className="personas-grid">
-          <div className="persona-card reveal">
-            <div className="persona-icon">
-              <i className="fas fa-cogs"></i>
-            </div>
-            <div className="persona-tag">COO / Diretor de Operações</div>
-            <h3 className="persona-title">Operação emperrada por processos manuais?</h3>
-            <p className="persona-desc">Processos lentos, dependência de planilhas, retrabalho constante? Automatizamos o que trava a sua operação — sem interromper o que já funciona.</p>
-            <a href="#solucoes" className="persona-link">Ver soluções <i className="fas fa-arrow-right"></i></a>
-          </div>
-          <div className="persona-card reveal">
-            <div className="persona-icon">
-              <i className="fas fa-server"></i>
-            </div>
-            <div className="persona-tag">CIO / Head de IT</div>
-            <h3 className="persona-title">Pressão para trazer IA, sistemas fragmentados?</h3>
-            <p className="persona-desc">Integramos IA ao seu stack existente — ERP, CRM, bases de dados — com segurança, governança e sem black-boxes ou lock-in em licenças.</p>
-            <a href="#solucoes" className="persona-link">Ver soluções <i className="fas fa-arrow-right"></i></a>
-          </div>
-          <div className="persona-card reveal">
-            <div className="persona-icon">
-              <i className="fas fa-lightbulb"></i>
-            </div>
-            <div className="persona-tag">Diretor de Inovação</div>
-            <h3 className="persona-title">POCs que nunca chegam a produção?</h3>
-            <p className="persona-desc">Levamos projetos de IA do diagnóstico ao resultado mensurável. Discovery, protótipo, produção — com KPIs claros em cada fase.</p>
-            <a href="#como-trabalhamos" className="persona-link">Ver metodologia <i className="fas fa-arrow-right"></i></a>
-          </div>
-          <div className="persona-card reveal">
-            <div className="persona-icon">
-              <i className="fas fa-chart-line"></i>
-            </div>
-            <div className="persona-tag">CEO / Fundador</div>
-            <h3 className="persona-title">Concorrentes já usam IA — por onde começar?</h3>
-            <p className="persona-desc">Criamos um roadmap pragmático, começando onde o impacto é maior. Sem jargão, sem hype — foco em payback rápido e escalabilidade real.</p>
-            <a href="#casos" className="persona-link">Ver casos de sucesso <i className="fas fa-arrow-right"></i></a>
-          </div>
+    <section id="para-quem" className="px-6 py-32 lg:px-12">
+      <div className="mx-auto max-w-[1400px]">
+        <FadeInScroll>
+          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[var(--color-accent)]">
+            Para Quem
+          </p>
+          <h2 className="mb-4 max-w-3xl text-[clamp(1.75rem,3vw,2.75rem)] font-semibold leading-[1.05]">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit
+          </h2>
+          <p className="mb-16 max-w-xl text-lg text-[var(--color-fg-muted)]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+          </p>
+        </FadeInScroll>
+
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {PERSONAS.map((p, i) => {
+            const Icon = p.icon
+            return (
+              <FadeInScroll key={p.role} delay={i * 0.1}>
+                <article className="group h-full rounded-[var(--radius-card)] border border-[var(--color-border)] bg-white/[0.03] p-8 transition-all duration-300 ease-[var(--ease-out-soft)] hover:-translate-y-1 hover:border-[var(--color-accent)] hover:bg-white/[0.05] hover:shadow-[var(--shadow-card)]">
+                  <Icon
+                    size={32}
+                    className="mb-6 text-[var(--color-accent)] transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <p className="mb-2 text-xs font-medium uppercase tracking-widest text-[var(--color-fg-subtle)]">
+                    {p.role}
+                  </p>
+                  <h3 className="mb-3 text-xl font-semibold text-[var(--color-fg)]">
+                    {p.label}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-[var(--color-fg-muted)]">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.
+                  </p>
+                  <span className="mt-6 inline-flex items-center gap-1 text-sm text-[var(--color-fg-muted)] transition-colors group-hover:text-[var(--color-accent)]">
+                    Ver mais →
+                  </span>
+                </article>
+              </FadeInScroll>
+            )
+          })}
         </div>
       </div>
     </section>

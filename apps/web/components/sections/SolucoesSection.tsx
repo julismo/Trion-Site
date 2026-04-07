@@ -1,205 +1,90 @@
-export default function SolucoesSection() {
+'use client'
+
+/**
+ * SOLUÇÕES — 3 soluções alternadas (texto/visual ↔ visual/texto).
+ * Layout assimétrico (regra Gu).
+ */
+
+import { Bot, Workflow, Code2 } from 'lucide-react'
+import { FadeInScroll } from '@/components/animations/FadeInScroll'
+
+const SOLUCOES = [
+  { num: '01', icon: Bot, badge: 'Agentes IA', title: 'Lorem ipsum dolor sit amet', tags: ['LLM', 'RAG', 'Tool use'] },
+  { num: '02', icon: Workflow, badge: 'Automações', title: 'Lorem ipsum dolor sit amet', tags: ['n8n', 'Webhooks', 'Cron'] },
+  { num: '03', icon: Code2, badge: 'Software', title: 'Lorem ipsum dolor sit amet', tags: ['Next.js', 'API', 'Dashboard'] },
+]
+
+export function SolucoesSection() {
   return (
-    <section className="section" id="solucoes">
-      <div className="container">
-        <div className="section-header reveal">
-          <span className="section-label">Soluções</span>
-          <h2 className="section-title">Tudo o que precisa.<br />Nada do que não precisa.</h2>
-          <p className="section-subtitle">Três tipos de solução, todos desenvolvidos à medida para o seu negócio, dados e processos específicos.</p>
-        </div>
+    <section id="solucoes" className="px-6 py-32 lg:px-12">
+      <div className="mx-auto max-w-[1400px]">
+        <FadeInScroll>
+          <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[var(--color-accent)]">
+            Soluções
+          </p>
+          <h2 className="mb-20 max-w-3xl text-[clamp(1.75rem,3vw,2.75rem)] font-semibold leading-[1.05]">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit
+          </h2>
+        </FadeInScroll>
 
-        <div className="solutions-list">
-          {/* Solução 01 */}
-          <div className="solution-item reveal">
-            <div className="solution-number">01</div>
-            <div className="solution-content">
-              <div className="solution-badge">Agentes de IA</div>
-              <h3 className="solution-title">Agentes de IA<br />Personalizados</h3>
-              <p className="solution-desc">Agentes inteligentes que automatizam decisões complexas, integrados aos seus dados e processos internos. IA que entende o seu negócio — não genérica.</p>
-              <div className="solution-usecases">
-                <span className="usecase-tag"><i className="fas fa-comment-alt"></i> Atendimento ao cliente</span>
-                <span className="usecase-tag"><i className="fas fa-file-alt"></i> Análise de documentos</span>
-                <span className="usecase-tag"><i className="fas fa-headset"></i> Suporte interno</span>
-                <span className="usecase-tag"><i className="fas fa-tags"></i> Classificação e triagem</span>
-              </div>
-              <div className="solution-highlight">
-                <i className="fas fa-check-circle"></i>
-                <span>IA que aprende com os seus dados, não com dados genéricos</span>
-              </div>
-            </div>
-            <div className="solution-visual">
-              <div className="solution-card-visual">
-                <div className="visual-header">
-                  <div className="visual-dots">
-                    <span className="dot red"></span>
-                    <span className="dot yellow"></span>
-                    <span className="dot green"></span>
-                  </div>
-                  <span className="visual-title">Agente de IA — Atendimento</span>
-                </div>
-                <div className="visual-body">
-                  <div className="agent-flow">
-                    <div className="agent-step active">
-                      <div className="step-icon"><i className="fas fa-inbox"></i></div>
-                      <div className="step-info">
-                        <span className="step-name">Entrada do pedido</span>
-                        <span className="step-status success">✓ Processado</span>
-                      </div>
+        <div className="space-y-24">
+          {SOLUCOES.map((sol, i) => {
+            const Icon = sol.icon
+            const reversed = i % 2 === 1
+            return (
+              <FadeInScroll key={sol.num}>
+                <div
+                  className={`grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16 ${
+                    reversed ? 'lg:[&>*:first-child]:order-2' : ''
+                  }`}
+                >
+                  {/* Texto */}
+                  <div className="lg:col-span-6">
+                    <span className="mb-4 block font-mono text-sm text-[var(--color-fg-subtle)]">
+                      {sol.num}
+                    </span>
+                    <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-bg-elevated)] px-3 py-1 text-xs">
+                      <Icon size={14} className="text-[var(--color-accent)]" />
+                      {sol.badge}
                     </div>
-                    <div className="agent-connector"></div>
-                    <div className="agent-step active">
-                      <div className="step-icon"><i className="fas fa-brain"></i></div>
-                      <div className="step-info">
-                        <span className="step-name">Classificação automática</span>
-                        <span className="step-status success">✓ Alta prioridade</span>
-                      </div>
+                    <h3 className="mb-4 text-2xl font-semibold leading-tight text-[var(--color-fg)] md:text-3xl">
+                      {sol.title}
+                    </h3>
+                    <p className="mb-6 text-[var(--color-fg-muted)]">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt.
+                    </p>
+                    <div className="mb-6 flex flex-wrap gap-2">
+                      {sol.tags.map((t) => (
+                        <span
+                          key={t}
+                          className="rounded-full border border-[var(--color-border)] bg-white/[0.03] px-3 py-1 text-xs text-[var(--color-fg-muted)]"
+                        >
+                          {t}
+                        </span>
+                      ))}
                     </div>
-                    <div className="agent-connector"></div>
-                    <div className="agent-step">
-                      <div className="step-icon"><i className="fas fa-bolt"></i></div>
-                      <div className="step-info">
-                        <span className="step-name">Ação automática</span>
-                        <span className="step-status processing">⟳ Executando...</span>
-                      </div>
-                    </div>
+                    <p className="text-sm text-[var(--color-fg)]">
+                      ✓ Lorem ipsum dolor sit amet, consectetur
+                    </p>
                   </div>
-                  <div className="agent-metric">
-                    <span className="metric-label">Tempo médio de resposta</span>
-                    <span className="metric-value">1.2s</span>
-                    <span className="metric-diff positive">-94% vs. manual</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          {/* Solução 02 */}
-          <div className="solution-item solution-reverse reveal">
-            <div className="solution-number">02</div>
-            <div className="solution-content">
-              <div className="solution-badge">Automações</div>
-              <h3 className="solution-title">Automações Inteligentes<br />de Processos</h3>
-              <p className="solution-desc">Elimine tarefas manuais repetitivas com fluxos automatizados que conectam sistemas, dados e pessoas. Menos retrabalho, mais velocidade operacional.</p>
-              <div className="solution-usecases">
-                <span className="usecase-tag"><i className="fas fa-file-invoice-dollar"></i> Processos financeiros</span>
-                <span className="usecase-tag"><i className="fas fa-truck"></i> Operações logísticas</span>
-                <span className="usecase-tag"><i className="fas fa-user-check"></i> Onboarding</span>
-                <span className="usecase-tag"><i className="fas fa-chart-bar"></i> Relatórios automáticos</span>
-              </div>
-              <div className="solution-highlight">
-                <i className="fas fa-check-circle"></i>
-                <span>Conectamos qualquer sistema via APIs, sem reescrever o seu stack</span>
-              </div>
-            </div>
-            <div className="solution-visual">
-              <div className="solution-card-visual">
-                <div className="visual-header">
-                  <div className="visual-dots">
-                    <span className="dot red"></span>
-                    <span className="dot yellow"></span>
-                    <span className="dot green"></span>
-                  </div>
-                  <span className="visual-title">Automação — Fluxo Financeiro</span>
-                </div>
-                <div className="visual-body">
-                  <div className="automation-flow">
-                    <div className="auto-node">
-                      <span className="auto-icon"><i className="fas fa-database"></i></span>
-                      <span>ERP</span>
-                    </div>
-                    <div className="auto-arrow">→</div>
-                    <div className="auto-node highlight">
-                      <span className="auto-icon"><i className="fas fa-brain"></i></span>
-                      <span>IA</span>
-                    </div>
-                    <div className="auto-arrow">→</div>
-                    <div className="auto-node">
-                      <span className="auto-icon"><i className="fas fa-check"></i></span>
-                      <span>CRM</span>
-                    </div>
-                  </div>
-                  <div className="auto-stats">
-                    <div className="auto-stat">
-                      <span className="auto-stat-num">70%</span>
-                      <span className="auto-stat-label">menos tempo</span>
-                    </div>
-                    <div className="auto-stat">
-                      <span className="auto-stat-num">0</span>
-                      <span className="auto-stat-label">erros manuais</span>
-                    </div>
-                    <div className="auto-stat">
-                      <span className="auto-stat-num">24/7</span>
-                      <span className="auto-stat-label">operação</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Solução 03 */}
-          <div className="solution-item reveal">
-            <div className="solution-number">03</div>
-            <div className="solution-content">
-              <div className="solution-badge">Software Sob Medida</div>
-              <h3 className="solution-title">Software Sob Medida<br />com IA</h3>
-              <p className="solution-desc">Desenvolvimento de aplicações à medida com inteligência artificial incorporada — desenhadas para o seu contexto, dados e fluxos de trabalho específicos.</p>
-              <div className="solution-usecases">
-                <span className="usecase-tag"><i className="fas fa-tachometer-alt"></i> Dashboards preditivos</span>
-                <span className="usecase-tag"><i className="fas fa-layer-group"></i> Plataformas de gestão</span>
-                <span className="usecase-tag"><i className="fas fa-search"></i> Ferramentas de análise</span>
-                <span className="usecase-tag"><i className="fas fa-robot"></i> Copilots internos</span>
-              </div>
-              <div className="solution-highlight">
-                <i className="fas fa-check-circle"></i>
-                <span>Tecnologia que se adapta à sua empresa — não o contrário</span>
-              </div>
-            </div>
-            <div className="solution-visual">
-              <div className="solution-card-visual">
-                <div className="visual-header">
-                  <div className="visual-dots">
-                    <span className="dot red"></span>
-                    <span className="dot yellow"></span>
-                    <span className="dot green"></span>
-                  </div>
-                  <span className="visual-title">Dashboard Preditivo</span>
-                </div>
-                <div className="visual-body">
-                  <div className="dashboard-preview">
-                    <div className="dash-metric">
-                      <span className="dash-label">Previsão de demanda</span>
-                      <span className="dash-value">+12%</span>
-                      <div className="dash-bar">
-                        <div className="dash-bar-fill" style={{ width: '72%' }}></div>
+                  {/* Visual */}
+                  <div className="lg:col-span-6">
+                    <div className="relative aspect-[4/3] rounded-[var(--radius-card)] border border-[var(--color-border)] bg-white/[0.03]">
+                      <div className="absolute left-4 top-4 flex gap-1.5">
+                        <span className="h-2 w-2 rounded-full bg-[var(--color-accent)]" />
+                        <span className="h-2 w-2 rounded-full bg-[var(--color-fg-subtle)]" />
+                        <span className="h-2 w-2 rounded-full bg-[var(--color-fg-subtle)]" />
                       </div>
-                    </div>
-                    <div className="dash-metric">
-                      <span className="dash-label">Eficiência operacional</span>
-                      <span className="dash-value">94%</span>
-                      <div className="dash-bar">
-                        <div className="dash-bar-fill" style={{ width: '94%' }}></div>
-                      </div>
-                    </div>
-                    <div className="dash-metric">
-                      <span className="dash-label">Redução de custos</span>
-                      <span className="dash-value">-35%</span>
-                      <div className="dash-bar">
-                        <div className="dash-bar-fill" style={{ width: '55%' }}></div>
+                      <div className="absolute inset-0 flex items-center justify-center text-sm text-[var(--color-fg-subtle)]">
+                        [VISUAL MOCK {sol.num}]
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="solution-disclaimer reveal">
-          <div className="disclaimer-inner">
-            <i className="fas fa-shield-alt"></i>
-            <span>Sem dependência de licenças proprietárias. <strong>Flexibilidade total. Controlo dos seus dados.</strong></span>
-          </div>
+              </FadeInScroll>
+            )
+          })}
         </div>
       </div>
     </section>

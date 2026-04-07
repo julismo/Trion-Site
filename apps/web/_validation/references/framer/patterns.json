@@ -1,0 +1,619 @@
+{
+  "url": "https://www.framer.com/",
+  "title": "Framer: Create a professional website, free. No code website builder loved by designers.",
+  "bodyBg": "rgb(0, 0, 0)",
+  "bodyColor": "rgb(0, 0, 0)",
+  "bodyFont": "sans-serif",
+  "cssVars": {
+    "--one-if-corner-shape-supported": "1"
+  },
+  "transitions": [
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Log in",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "8px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Sign up",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Copy Logo as SVG",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "10px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Brand Guidelines",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "10px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Product",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "8px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Teams",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "8px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Resources",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "8px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Community",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "8px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Support",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "8px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Enterprise",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "8px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Pricing",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "8px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "State of Sites ’26 Unlock the report no",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Start for free",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "100px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Start with AI",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "100px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Meet our customers",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "AI",
+      "transition": "color 0.3s cubic-bezier(0.44, 0, 0.56, 1)",
+      "transitionDuration": "0.3s",
+      "transitionTimingFunction": "cubic-bezier(0.44, 0, 0.56, 1)",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Learn more",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Design",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Learn more",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "CMS",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Learn more",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Collaborate",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Learn more",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Watch the video",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "500"
+    },
+    {
+      "tag": "a",
+      "text": "Learn more",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Learn more",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "Learn more",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "0px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "a",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "15px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "button",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "40px",
+      "fontWeight": "400"
+    },
+    {
+      "tag": "button",
+      "text": "",
+      "transition": "all",
+      "transitionDuration": "0s",
+      "transitionTimingFunction": "ease",
+      "borderRadius": "40px",
+      "fontWeight": "400"
+    }
+  ],
+  "animations": [
+    {
+      "type": "Animation",
+      "playState": "finished",
+      "duration": 1000,
+      "easing": "linear",
+      "target": "div"
+    },
+    {
+      "type": "Animation",
+      "playState": "finished",
+      "duration": 1000,
+      "easing": "linear",
+      "target": "div"
+    },
+    {
+      "type": "Animation",
+      "playState": "finished",
+      "duration": 700,
+      "easing": "linear",
+      "target": "div"
+    },
+    {
+      "type": "Animation",
+      "playState": "finished",
+      "duration": 700,
+      "easing": "linear",
+      "target": "a"
+    },
+    {
+      "type": "Animation",
+      "playState": "finished",
+      "duration": 700,
+      "easing": "linear",
+      "target": "a"
+    },
+    {
+      "type": "Animation",
+      "playState": "finished",
+      "duration": 1000,
+      "easing": "linear",
+      "target": "div"
+    },
+    {
+      "type": "Animation",
+      "playState": "finished",
+      "duration": 1000,
+      "easing": "linear",
+      "target": "div"
+    },
+    {
+      "type": "Animation",
+      "playState": "finished",
+      "duration": 1000,
+      "easing": "linear",
+      "target": "div"
+    },
+    {
+      "type": "Animation",
+      "playState": "finished",
+      "duration": 1000,
+      "easing": "linear",
+      "target": "div"
+    },
+    {
+      "type": "Animation",
+      "playState": "finished",
+      "duration": 1000,
+      "easing": "linear",
+      "target": "div"
+    },
+    {
+      "type": "Animation",
+      "playState": "finished",
+      "duration": 400,
+      "easing": "linear",
+      "target": "div"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Inter Tight",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter Tight",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter Tight",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter Tight",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter Tight",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter Tight",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Inter Tight",
+      "weight": "700",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Mona Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Mona Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "unloaded"
+    },
+    {
+      "family": "Mona Sans",
+      "weight": "500",
+      "style": "normal",
+      "status": "loaded"
+    }
+  ],
+  "libs": [
+    "ogl",
+    "motion"
+  ],
+  "primaryCTA": {
+    "text": "Sign up",
+    "background": "rgb(255, 255, 255)",
+    "color": "rgb(0, 0, 238)",
+    "transition": "all",
+    "transform": "none",
+    "borderRadius": "15px",
+    "fontWeight": "400",
+    "fontSize": "12px",
+    "padding": "6px 10px 7px",
+    "boxShadow": "none"
+  }
+}

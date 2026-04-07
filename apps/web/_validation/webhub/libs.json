@@ -1,0 +1,12 @@
+{
+  "gsap": true,
+  "ScrollTrigger": true,
+  "SplitText": true,
+  "ScrollSmoother": true,
+  "lenis": false,
+  "aos": false,
+  "swiper": false,
+  "lottie": false,
+  "three": false,
+  "framer": false
+}
