@@ -8,7 +8,7 @@
  */
 
 import { useRef } from 'react'
-import { gsap, SplitText, useGSAP } from '@/lib/gsap-init'
+import { gsap, SplitText, ScrollTrigger, useGSAP } from '@/lib/gsap-init'
 import { cn } from '@/lib/utils'
 
 interface SplitTextRevealProps {
@@ -24,6 +24,11 @@ interface SplitTextRevealProps {
    * - 'blur': per-char filter blur(20px) + random stagger — grupowebhub style
    */
   effect?: 'slide' | 'blur'
+  /**
+   * If true, animation fires when element enters viewport (ScrollTrigger).
+   * Default false → fires on mount.
+   */
+  onScroll?: boolean
 }
 
 export function SplitTextReveal({
@@ -34,6 +39,7 @@ export function SplitTextReveal({
   stagger = 0.025,
   delay = 0.2,
   effect = 'slide',
+  onScroll = false,
 }: SplitTextRevealProps) {
   const ref = useRef<HTMLElement>(null)
 
@@ -58,6 +64,16 @@ export function SplitTextReveal({
               ? split.words
               : split.lines
 
+      const scrollTriggerCfg = onScroll
+        ? {
+            scrollTrigger: {
+              trigger: ref.current,
+              start: 'top 85%',
+              toggleActions: 'play none none reverse',
+            },
+          }
+        : {}
+
       if (effect === 'blur') {
         // grupowebhub.com.br exact pattern: filter blur 20px + random stagger
         gsap.from(targets, {
@@ -69,7 +85,8 @@ export function SplitTextReveal({
             each: 0.02,
             from: 'random',
           },
-          delay,
+          delay: onScroll ? 0 : delay,
+          ...scrollTriggerCfg,
         })
       } else {
         // Default slide effect
@@ -79,15 +96,21 @@ export function SplitTextReveal({
           duration: 0.8,
           ease: 'power4.out',
           stagger,
-          delay,
+          delay: onScroll ? 0 : delay,
+          ...scrollTriggerCfg,
         })
       }
 
       return () => {
+        if (onScroll) {
+          ScrollTrigger.getAll().forEach((st) => {
+            if (st.trigger === ref.current) st.kill()
+          })
+        }
         split.revert() // CRÍTICO — restaurar markup original
       }
     },
-    { scope: ref, dependencies: [effect] }
+    { scope: ref, dependencies: [effect, onScroll] }
   )
 
   return (

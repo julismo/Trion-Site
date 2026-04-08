@@ -147,13 +147,45 @@
    Scrollbar custom — discreta, tom da marca
    ========================================================================== */
 
-/* Scrollbar oculta — sem barra lateral visível, scroll nativo funciona na mesma */
+/* Fade-in keyframe — usado em testemunhos carrossel */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar custom — barra branca fina com setas */
 ::-webkit-scrollbar {
-  display: none;
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+::-webkit-scrollbar-button:single-button {
+  display: block;
+  height: 14px;
+  width: 6px;
+  background-color: transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'%3E%3Cpath d='M3 1L6 5H0Z' fill='rgba(255,255,255,0.4)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6' viewBox='0 0 6 6'%3E%3Cpath d='M3 5L0 1H6Z' fill='rgba(255,255,255,0.4)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
 }
 
 /* ==========================================================================
@@ -212,6 +244,12 @@ html.loaded .hero-entry-content {
     transform: none;
     transition: none;
   }
+}
+
+/* Chat typing indicator dots — bounce 1.2s loop, 0.15s delay entre dots */
+@keyframes chat-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30%           { transform: translateY(-6px); opacity: 1; }
 }
 
 /* ==========================================================================
@@ -305,127 +343,4 @@ html.loaded .hero-entry-content {
     inset: -16px 0 auto 0;
     height: 16px;
   }
-}
-
-/* ==========================================================================
-   ACESSIBILIDADE — classes aplicadas em <html> pelo AccessibilityPanel.
-   Persistido em localStorage `trion-a11y`. Restaurado on first mount.
-
-   Estrutura segue WCAG 2.2 AA:
-     1.4.4  — resize text até 150%
-     1.4.12 — text spacing (line/letter)
-     2.4.7  — focus visible
-     1.4.3  — contrast minimum (4.5:1)
-   ========================================================================== */
-
-/* ─── 1. Tamanho do texto — root font-size (cascading via rem) ─── */
-html.a11y-text-1 { font-size: 17.6px; }  /* 110% */
-html.a11y-text-2 { font-size: 20px;   }  /* 125% */
-html.a11y-text-3 { font-size: 24px;   }  /* 150% — WCAG 1.4.4 limit */
-
-/* ─── 2. Altura da linha (line-height) — WCAG 1.4.12 ≥ 1.5 ─── */
-html.a11y-lh-1 body, html.a11y-lh-1 p, html.a11y-lh-1 li { line-height: 1.8 !important; }
-html.a11y-lh-2 body, html.a11y-lh-2 p, html.a11y-lh-2 li { line-height: 2.0 !important; }
-
-/* ─── 3. Espaço entre letras (letter-spacing) — WCAG 1.4.12 ≥ 0.12em ─── */
-html.a11y-ls-1 body, html.a11y-ls-1 h1, html.a11y-ls-1 h2, html.a11y-ls-1 h3, html.a11y-ls-1 p, html.a11y-ls-1 li {
-  letter-spacing: 0.05em !important;
-  word-spacing: 0.1em !important;
-}
-html.a11y-ls-2 body, html.a11y-ls-2 h1, html.a11y-ls-2 h2, html.a11y-ls-2 h3, html.a11y-ls-2 p, html.a11y-ls-2 li {
-  letter-spacing: 0.12em !important;
-  word-spacing: 0.16em !important;
-}
-
-/* ─── 4. Saturação — filter no body, gradual ─── */
-html.a11y-sat-1 body { filter: saturate(0.75); }
-html.a11y-sat-2 body { filter: saturate(0.5);  }
-html.a11y-sat-3 body { filter: saturate(0);    }
-
-/* ─── 5. Alto contraste — override dos tokens ─── */
-html.a11y-high-contrast {
-  --color-bg: #000000;
-  --color-bg-elevated: #0a0a0a;
-  --color-bg-overlay: #141414;
-  --color-fg: #ffffff;
-  --color-fg-muted: #ffffff;
-  --color-fg-subtle: #e6e6e6;
-  --color-border: #ffffff;
-  --color-border-strong: #ffffff;
-  --color-accent: #ffd700;       /* amarelo high-contrast (WCAG AAA contra preto) */
-  --color-accent-hover: #ffe44d;
-}
-html.a11y-high-contrast body {
-  background-image: none !important;
-}
-
-/* ─── 6. Realçar links ─── */
-html.a11y-highlight-links a:not([aria-label]):not([role="switch"]) {
-  text-decoration: underline !important;
-  text-underline-offset: 3px;
-  text-decoration-thickness: 2px;
-  font-weight: 600 !important;
-  color: var(--color-accent) !important;
-}
-
-/* ─── 7. Font legível — Atkinson Hyperlegible (designed by Braille Institute) ─── */
-html.a11y-readable-font,
-html.a11y-readable-font body,
-html.a11y-readable-font h1,
-html.a11y-readable-font h2,
-html.a11y-readable-font h3,
-html.a11y-readable-font h4,
-html.a11y-readable-font p,
-html.a11y-readable-font li,
-html.a11y-readable-font a,
-html.a11y-readable-font button,
-html.a11y-readable-font span {
-  font-family: var(--font-readable), 'Atkinson Hyperlegible', system-ui, sans-serif !important;
-}
-/* Preview interno do painel também herda */
-.a11y-preview-readable,
-.a11y-preview-readable * {
-  font-family: var(--font-readable), 'Atkinson Hyperlegible', system-ui, sans-serif !important;
-}
-
-/* ─── 8. Parar animações — força reduced-motion ─── */
-html.a11y-stop-animations *,
-html.a11y-stop-animations *::before,
-html.a11y-stop-animations *::after {
-  animation-duration: 0.001ms !important;
-  animation-iteration-count: 1 !important;
-  transition-duration: 0.001ms !important;
-  scroll-behavior: auto !important;
-}
-
-/* ─── 9. Realçar foco — WCAG 2.4.7 Focus Visible ─── */
-html.a11y-focus-highlight a:focus-visible,
-html.a11y-focus-highlight button:focus-visible,
-html.a11y-focus-highlight input:focus-visible,
-html.a11y-focus-highlight textarea:focus-visible,
-html.a11y-focus-highlight select:focus-visible,
-html.a11y-focus-highlight [tabindex]:focus-visible {
-  outline: 3px solid var(--color-accent) !important;
-  outline-offset: 3px !important;
-  border-radius: 4px;
-  box-shadow: 0 0 0 6px oklch(0.7 0.18 40 / 0.25) !important;
-}
-
-/* ─── 10. Máscara de leitura — faixa horizontal segue o cursor ─── */
-html.a11y-reading-mask::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  pointer-events: none;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.85) 0%,
-    rgba(0, 0, 0, 0.85) calc(var(--a11y-mask-y, 50%) - 70px),
-    transparent calc(var(--a11y-mask-y, 50%) - 60px),
-    transparent calc(var(--a11y-mask-y, 50%) + 60px),
-    rgba(0, 0, 0, 0.85) calc(var(--a11y-mask-y, 50%) + 70px),
-    rgba(0, 0, 0, 0.85) 100%
-  );
-  transition: background 0.05s linear;
 }

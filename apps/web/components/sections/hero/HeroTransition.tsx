@@ -26,7 +26,7 @@ interface HeroTransitionProps {
 }
 
 export function HeroTransition({
-  text = 'Não acreditamos em soluções genéricas. Cada projeto é pensado do zero, unindo estratégia, design e desenvolvimento.',
+  text = 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna.',
   triggerSelector = 'section.hero-trigger',
 }: HeroTransitionProps) {
   const ref = useRef<HTMLDivElement>(null)
@@ -122,10 +122,21 @@ export function HeroTransition({
 
       {/* Texto reveal — z-25, OPACITY 0 default */}
       <div
-        className="hero-texto-transicao pointer-events-none absolute inset-0 z-[25] hidden items-center justify-center px-12 lg:flex"
-        style={{ opacity: 0 }}
+        className="hero-texto-transicao pointer-events-none absolute inset-0 z-[25] hidden items-center justify-center lg:flex"
+        style={{ opacity: 0, padding: '3.6rem' }}
       >
-        <p className="textoAnimado2 max-w-5xl text-center text-[clamp(1.5rem,3vw,2.5rem)] font-semibold leading-tight text-[var(--color-fg)]">
+        <p
+          className="textoAnimado2 w-full font-normal"
+          style={{
+            fontFamily: 'var(--font-inter), Inter, sans-serif',
+            fontSize: 'clamp(2.25rem, 3.75vw, 4.5rem)',
+            fontWeight: 400,
+            lineHeight: 'normal',
+            textAlign: 'start',
+            color: 'rgba(255, 255, 255, 0.75)',
+            hyphens: 'manual',
+          }}
+        >
           {text}
         </p>
       </div>

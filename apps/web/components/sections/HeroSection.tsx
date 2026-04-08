@@ -68,7 +68,7 @@ export function HeroSection() {
       </div>
 
       {/* Cortinas verticais + texto reveal — efeito grupowebhub.com.br */}
-      <HeroTransition text="Cada operação é única. Cada agente é desenhado à medida do teu negócio, não copy-paste de templates." />
+      <HeroTransition text="Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna." />
     </section>
   )
 }

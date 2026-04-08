@@ -9,10 +9,10 @@ import { PinnedSection } from '@/components/animations/PinnedSection'
 import { AnimatedCounter } from '@/components/ui/AnimatedCounter'
 
 const METRICS = [
-  { value: 45, suffix: '%', label: 'Redução de custos operacionais' },
-  { value: 3, suffix: '×', label: 'Velocidade média de processos' },
-  { value: 70, suffix: '%', label: 'Tarefas repetitivas automatizadas' },
-  { value: 12, suffix: '+', label: 'Projectos em produção' },
+  { value: 0, suffix: '%', label: 'Lorem ipsum dolor' },
+  { value: 0, suffix: '×', label: 'Lorem ipsum amet' },
+  { value: 0, suffix: '%', label: 'Lorem ipsum sit' },
+  { value: 0, suffix: '+', label: 'Lorem ipsum' },
 ]
 
 export function MetricsSection() {
@@ -20,7 +20,7 @@ export function MetricsSection() {
     <PinnedSection className="flex min-h-screen items-center px-6 py-32 lg:px-12">
       <div className="mx-auto w-full max-w-[1400px]">
         <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[var(--color-accent)]">
-          Resultados
+          Lorem
         </p>
         <h2 className="mb-20 max-w-3xl text-[clamp(1.75rem,3vw,2.75rem)] font-semibold leading-[1.05]">
           Lorem ipsum dolor sit amet consectetur adipiscing

@@ -26,11 +26,11 @@ import { ChatbotPanel } from './ChatbotPanel'
  *  - Português europeu directo, sem emojis, sem "olá!"
  */
 const MESSAGES = [
-  'Tens um projeto novo?',     // 21 — qualificação
-  'Quanto custa começar?',     // 21 — antecipa objeção #1
-  'Marcamos uma reunião?',     // 21 — call to action
-  'Vamos pôr em marcha?',      // 20 — urgência
-  'Por onde quer começar?',    // 22 — antecipa "como"
+  'Lorem ipsum dolor sit?',    // V2: lorem only
+  'Lorem ipsum dolor amet?',
+  'Lorem ipsum consectetur?',
+  'Lorem ipsum adipiscing?',
+  'Lorem ipsum elit sed?',
 ]
 
 /**
